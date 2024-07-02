@@ -1,0 +1,64 @@
+.input-group-append {
+    cursor: pointer;
+}
+.header{
+    color: #0E4270;
+    font-weight: bold;
+}
+.container-dotted{
+    border: 1px dotted;
+    border-radius: 4px;
+    color: #666666;
+}
+.form-header{
+    font-weight: bold;
+    color: #0E4270;
+    background-color: #EBCA7D ;
+}
+.form-header-show{
+    font-weight: bold;
+    color: #0E4270;
+}
+.inputShow{
+    border:1px solid #666666;
+    border-radius: 4px;
+}
+.btn.btn-darkblue{
+    background-color: #0E4270;
+    color: white;
+}
+.btn.btn-darkblue:hover{
+    background-color: #0E4270;
+    color: white;
+}
+.btn.btn.outline-darkblue{
+    background-color: white;
+    color: #0E4270;
+    border:2px solid #0E4270;
+}
+.btn.btn.outline-darkblue:hover{
+    background-color: #0E4270;
+    color: white;
+}
+.text-darkblue{
+    color: #0E4270;
+}
+.bi-file-arrow-down-fill {
+    font-size: x-large;
+}
+
+.bg-gold{
+    background-color: #EBCA7D ;
+}
+
+.nav-link.active,
+.nav-link.active:focus {
+    background-color: #D7A126 !important;
+    color: white !important;
+}
+.nav-tabs .nav-item .nav-link {
+    border-radius: 0; /* Remove rounded corners if applied */
+}
+.border-darkblue{
+    border: 1px solid #0E4270; ;
+}
