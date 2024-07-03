@@ -48,7 +48,7 @@
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
                                                 <td class="d-flex justify-content-center">
-                                                    <a href="check_subjects.html"
+                                                    <a href="{{url('check_subjects')}}"
                                                         class="btn btn-sm outline-darkblue rounded-pill w-50">ตรวจสอบ
                                                     </a>
                                                 </td>
@@ -78,7 +78,7 @@
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
                                                 <td class="d-flex justify-content-center">
-                                                    <a href="data_preview.html"
+                                                    <a href="{{url('data_preview')}}"
                                                         class="btn btn-sm outline-darkblue rounded-pill w-50">ดูข้อมูล</a>
                                                 </td>
                                             </tr>

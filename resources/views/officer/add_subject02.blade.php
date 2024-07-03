@@ -114,7 +114,7 @@
                 <div class="row">
                     <div class="col text-center"> <!-- Use text-center to align the button -->
                         <input type="button" class="btn outline-darkblue" value="ยกเลิก">
-                        <a href="../officer/manage_subjects.html" >
+                        <a href="{{url('manage_subjects')}}" >
 
                         </a>
                         <input type="button" class="btn btn-darkblue" value="ยืนยัน">

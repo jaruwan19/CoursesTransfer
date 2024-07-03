@@ -55,7 +55,7 @@
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="data_preview.html">เปิด</a>
+                                                    <a href="{{url('/data_preview')}}">เปิด</a>
                                                 </td>
                                                 <td>
                                                     <div class="form-check">
@@ -83,7 +83,7 @@
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="data_preview.html">เปิด</a>
+                                                    <a href="{{url('/data_preview')}}">เปิด</a>
                                                 </td>
                                                 <td>
                                                     <div class="form-check">
@@ -111,7 +111,7 @@
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="data_preview.html">เปิด</a>
+                                                    <a href="{{url('/data_preview')}}">เปิด</a>
                                                 </td>
                                                 <td>
                                                     <div class="form-check">
@@ -160,7 +160,7 @@
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="data_preview.html">เปิด</a>
+                                                    <a href="{{url('/data_preview')}}">เปิด</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -171,7 +171,7 @@
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="data_preview.html">เปิด</a>
+                                                    <a href="{{url('/data_preview')}}">เปิด</a>
                                                 </td>
                                             </tr>
                                         </tbody>

@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="p-2 mt-3 mb-3 d-flex justify-content-between">
-                    <a href="study_request.html" class="btn btn outline-darkblue btn-lg " name="cancle">ย้อนกลับ</a>
+                    <a href="{{url('study_request')}}" class="btn btn outline-darkblue btn-lg " name="cancle">ย้อนกลับ</a>
                 </div>
             </form>
         </div>

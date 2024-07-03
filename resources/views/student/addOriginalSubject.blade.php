@@ -159,7 +159,7 @@
 
                 <div class="p-2 mt-3 mb-3 d-flex justify-content-between">
                     <a href="{{url('/typeTransfer')}}" class="btn btn outline-darkblue btn-lg " name="cancle">ยกเลิก</a>
-                    <a href="{{url('checkData')}}" class="btn btn-darkblue btn-lg " name="submit">ยืนยัน</a>
+                    <a href="{{url('/checkData')}}" class="btn btn-darkblue btn-lg " name="submit">ยืนยัน</a>
                 </div>
             </form>
         </div>

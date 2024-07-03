@@ -2,7 +2,7 @@
 @section('content')
     <div class="container p-3 border border-1 justify-content-center">
         <h2 class="header">จัดการรายวิชา</h2>
-        <a href="add_subject.html" class="btn outline-darkblue mt-1 my-3">เพิ่มรายวิชา</a>
+        <a href="{{url('add_subject')}}" class="btn outline-darkblue mt-1 my-3">เพิ่มรายวิชา</a>
         <div class="container p-0 border border-1 justify-content-center">
             <form action="" class="form" method="post">
                 <div class="container">
