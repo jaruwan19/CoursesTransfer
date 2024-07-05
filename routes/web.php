@@ -47,7 +47,7 @@ Route::get('/payment_update', function () {
     return view('officer/payment_update');
 });
 Route::get('/recieve_docs', function () {
-    return view('officer/recieve_docs');
+    return view('officer/receive_docs');
 });
 Route::get('/receive_payment', function () {
     return view('officer/receive_payment');
