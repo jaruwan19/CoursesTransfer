@@ -1,6 +1,25 @@
 @extends('student.layout')
 @section('content')
     <div class="container p-3 border border-1 justify-content-center">
+        <!-- Stepprogress -->
+        <div>
+            <section class="step-wizard">
+                <ul class="step-wizard-list">
+                    <li class="step-wizard-item ">
+                        <span class="progress-count">1</span>
+                        <span class="progress-label">เลือกระบบเทียนโอนรายวิชา</span>
+                    </li>
+                    <li class="step-wizard-item ">
+                        <span class="progress-count">2</span>
+                        <span class="progress-label">เลือกประเภทการเทียบโอน</span>
+                    </li>
+                    <li class="step-wizard-item current-item">
+                        <span class="progress-count">3</span>
+                        <span class="progress-label">ยืนยันการยื่นคำร้อง</span>
+                    </li>
+                </ul>
+            </section>
+            <!-- Stepprogress -->
         <h2 class="header">ยื่นคำร้อง</h2>
         <div class="container border border-1 justify-content-center">
             <div class="container p-3">
