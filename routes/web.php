@@ -41,7 +41,7 @@ Route::get('/add_subject02', function () {
     return view('officer/add_subject02');
 });
 Route::get('/manage_subject', function () {
-    return view('officer/manage_subject');
+    return view('officer/manage_subjects');
 });
 Route::get('/payment_update', function () {
     return view('officer/payment_update');
