@@ -1,7 +1,7 @@
 @extends('student.layout')
 @section('content')
     <div class="container p-3 border border-1 justify-content-center">
-        <h2 class="header">ยื่นคำร้อง</h2>
+        <h4 class="header">ยื่นคำร้อง</h4>
         <div class="container border border-1 justify-content-center">
             <div class="container p-3">
                 <div class="row">
@@ -53,7 +53,7 @@
                                         <tr class="table-light">
                                             <th colspan="4">ข้อมูลรหัสนักศึกษาเดิม</th>
                                         </tr>
-                                        <tr>
+                                        <tr class="text-start">
                                           <th>รหัสวิชา</th>
                                           <th>ชื่อวิชา</th>
                                           <th>หน่วยกิต</th>
@@ -101,7 +101,7 @@
                                         <tr class="table-light">
                                             <th colspan="4">ข้อมูลรหัสนักศึกษาปัจจุบัน</th>
                                         </tr>
-                                        <tr>
+                                        <tr class="text-start">
                                           <th>รหัสวิชา</th>
                                           <th>ชื่อวิชา</th>
                                           <th>หน่วยกิต</th>

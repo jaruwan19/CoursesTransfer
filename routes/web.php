@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout');
+    return view('student/systemTransfer');
 });
 Route::get('/systemTransfer', function () {
     return view('student/systemTransfer');
@@ -28,6 +28,9 @@ Route::get('/checkData', function () {
 Route::get('/statusRequest', function () {
     return view('status/statusRequest');
 });
+Route::get('/statusPayment', function () {
+    return view('status/statusPayment');
+});
 Route::get('/addSubject', function () {
     return view('student/addSubject');
 });
@@ -40,14 +43,14 @@ Route::get('/add_subject', function () {
 Route::get('/add_subject02', function () {
     return view('officer/add_subject02');
 });
-Route::get('/manage_subject', function () {
-    return view('officer/manage_subject');
+Route::get('/manage_subjects', function () {
+    return view('officer/manage_subjects');
 });
 Route::get('/payment_update', function () {
     return view('officer/payment_update');
 });
-Route::get('/recieve_docs', function () {
-    return view('officer/recieve_docs');
+Route::get('/receive_docs', function () {
+    return view('officer/receive_docs');
 });
 Route::get('/receive_payment', function () {
     return view('officer/receive_payment');
@@ -67,6 +70,6 @@ Route::get('/check_subjects', function () {
 Route::get('/adv_study_request', function () {
     return view('advisor/adv_study_request');
 });
-Route::get('/data_preview', function () {
-    return view('advisor/data_preview');
+Route::get('/adv_data_preview', function () {
+    return view('advisor/adv_data_preview');
 });

@@ -45,9 +45,9 @@
                     <table class="table">
                         <thead class="table bg-gold">
                           <tr>
-                            <td>รหัสวิชา</td>
-                            <td>ชื่อวิชา</td>
-                            <td>หน่วยกิต</td>
+                            <th>รหัสวิชา</th>
+                            <th>ชื่อวิชา</th>
+                            <th>หน่วยกิต</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -79,7 +79,7 @@
                                 <th colspan="4">ข้อมูลรหัสนักศึกษาเดิม</th>
                                 <th colspan="6" class="border-start">ข้อมูลรหัสนักศึกษาเดิม</th>
                             </tr>
-                            <tr>
+                            <tr class="text-start">
                                 <th>รหัสวิชา</th>
                                 <th>ชื่อวิชา</th>
                                 <th>หน่วยกิต</th>

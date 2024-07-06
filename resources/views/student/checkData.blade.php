@@ -20,7 +20,7 @@
                 </ul>
             </section>
             <!-- Stepprogress -->
-        <h2 class="header">ยื่นคำร้อง</h2>
+        <h4 class="header">ยื่นคำร้อง</h4>
         <div class="container border border-1 justify-content-center">
             <div class="container p-3">
                 <div class="row">
@@ -64,11 +64,11 @@
                         <h5 class="form-header-show" >ยกเว้นหมวดศึกษาทั่วไป  15 หน่วยกิต</h5>
                     </div>
                     <table class="table">
-                        <thead class="table-primary">
+                        <thead class="table bg-gold">
                           <tr>
-                            <td>รหัสวิชา</td>
-                            <td>ชื่อวิชา</td>
-                            <td>หน่วยกิต</td>
+                            <th>รหัสวิชา</th>
+                            <th>ชื่อวิชา</th>
+                            <th>หน่วยกิต</th>
                           </tr>
                         </thead>
                         <tbody>

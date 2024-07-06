@@ -45,9 +45,9 @@
                     <table class="table">
                         <thead class="table bg-gold">
                           <tr>
-                            <td>รหัสวิชา</td>
-                            <td>ชื่อวิชา</td>
-                            <td>หน่วยกิต</td>
+                            <th>รหัสวิชา</th>
+                            <th>ชื่อวิชา</th>
+                            <th>หน่วยกิต</th>
                           </tr>
                         </thead>
                         <tbody>

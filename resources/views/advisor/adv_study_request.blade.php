@@ -1,7 +1,7 @@
 @extends('officer.layout')
 @section('content')
     <div class="container p-3 border border-1 justify-content-center">
-        <h2 class="header">คำร้องของนักศึกษา</h2>
+        <h4 class="header">คำร้องของนักศึกษา</h4>
         <div class="container p-0 border border-1 justify-content-center">
             <form action="" class="form" method="post">
                 <div class="container">
@@ -35,7 +35,7 @@
                                     aria-labelledby="tab1-tab">
                                     <!-- Table for Tab 1 -->
                                     <table class="table mt-2 border border-1">
-                                        <thead class="table bg-gold text-center">
+                                        <thead class="table bg-gold">
                                             <tr>
                                                 <th>รหัสนักศึกษา</th>
                                                 <th>ชื่อ-นามสกุล</th>
@@ -50,12 +50,12 @@
                                             <tr>
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
-                                                <td class="text-center">
-                                                    <a href="{{url('/data_preview')}}">เปิด</a>
+                                                <td>
+                                                    <a href="{{url('/adv_data_preview')}}">เปิด</a>
                                                 </td>
                                                 <td>
                                                     <div class="form-check">
@@ -78,12 +78,12 @@
                                             <tr>
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
-                                                <td class="text-center">
-                                                    <a href="{{url('/data_preview')}}">เปิด</a>
+                                                <td>
+                                                    <a href="{{url('/adv_data_preview')}}">เปิด</a>
                                                 </td>
                                                 <td>
                                                     <div class="form-check">
@@ -106,12 +106,12 @@
                                             <tr>
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
-                                                <td class="text-center">
-                                                    <a href="{{url('/data_preview')}}">เปิด</a>
+                                                <td>
+                                                    <a href="{{url('/adv_data_preview')}}">เปิด</a>
                                                 </td>
                                                 <td>
                                                     <div class="form-check">
@@ -155,23 +155,23 @@
                                             <tr>
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
-                                                <td class="text-center">
-                                                    <a href="{{url('/data_preview')}}">เปิด</a>
+                                                <td>
+                                                    <a href="{{url('/adv_data_preview')}}">เปิด</a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
-                                                <td class="text-center">
-                                                    <a href="{{url('/data_preview')}}">เปิด</a>
+                                                <td>
+                                                    <a href="{{url('/adv_data_preview')}}">เปิด</a>
                                                 </td>
                                             </tr>
                                         </tbody>

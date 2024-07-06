@@ -1,7 +1,7 @@
 @extends('officer.layout')
 @section('content')
     <div class="container p-3 border border-1 justify-content-center">
-        <h2 class="header">เพิ่มรายวิชา</h2>
+        <h4 class="header">เพิ่มรายวิชา</h4>
         <div class="container p-2 border border-1 justify-content-center">
             <form action="" class="form" method="post">
                 <div class="container">
@@ -41,12 +41,12 @@
                     
                 </div>
                 <table class="table mt-2 border border-1">
-                    <thead class="table bg-gold text-center">
+                    <thead class="table bg-gold">
                         <tr>
                             <th>รหัสวิชา</th>
                             <th>ชื่อวิชา </th>
                             <th>หน่วยกิต</th>
-                            <th>
+                            <th class="text-center">
                                 <i class="bi bi-plus-circle"></i>
                             </th>
                         </tr>

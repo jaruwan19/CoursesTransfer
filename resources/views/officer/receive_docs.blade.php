@@ -1,7 +1,7 @@
 @extends('officer.layout')
 @section('content')
     <div class="container p-3 border border-1 justify-content-center">
-        <h2 class="header">รับเอกสารคำร้อง</h2>
+        <h4 class="header">รับเอกสารคำร้อง</h4>
         <div class="container border p-2">
             <div class="row">
               <div class="col">
@@ -16,7 +16,7 @@
 
         <div class="container mt-2 p-0 border border-1 justify-content-center">
             <table class="table mt-2 border border-1">
-                <thead class="table bg-gold text-center">
+                <thead class="table bg-gold">
                     <tr>
                         <th>รหัสนักศึกษา</th>
                         <th>ชื่อ-นามสกุล</th>
@@ -29,7 +29,7 @@
                         <td>6410014101</td>
                         <td>จารุวรรณ ปกป้อง</td>
                         <td>วิศวกรรมซอฟต์แวร์</td>
-                        <td class="text-center">
+                        <td>
                             <a href="#">เปิด</a>
                         </td>
                     </tr>
@@ -37,7 +37,7 @@
                         <td>6410014101</td>
                         <td>จารุวรรณ ปกป้อง</td>
                         <td>วิศวกรรมซอฟต์แวร์</td>
-                        <td class="text-center">
+                        <td>
                             <a href="#">เปิด</a>
                         </td>
                     </tr>

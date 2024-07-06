@@ -1,7 +1,7 @@
 @extends('officer.layout')
 @section('content')
     <div class="container p-3 border border-1 justify-content-center">
-        <h2 class="header">อัปเดตการชำระเงิน</h2>
+        <h4 class="header">อัปเดตการชำระเงิน</h4>
         <div class="container p-0 border border-1 justify-content-center">
             <form action="" class="form" method="post">
                 <div class="container">
@@ -29,7 +29,7 @@
                                     aria-labelledby="tab1-tab">
                                     <!-- Table for Tab 1 -->
                                     <table class="table mt-2 border border-1">
-                                        <thead class="table bg-gold text-center">
+                                        <thead class="table bg-gold">
                                             <tr>
                                                 <th>รหัสนักศึกษา</th>
                                                 <th>ชื่อ-นามสกุล</th>
@@ -44,25 +44,10 @@
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
                                                 <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="text-center">
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                                <td class="d-flex justify-content-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6410014101</td>
-                                                <td>จารุวรรณ ปกป้อง</td>
-                                                <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td class="text-center">
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
                                                 <td class="d-flex justify-content-center">
@@ -74,10 +59,10 @@
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
                                                 <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
                                                 <td class="d-flex justify-content-center">
@@ -89,10 +74,25 @@
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
                                                 <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="text-center">
+                                                <td>
+                                                    <a href="#">เปิด</a>
+                                                </td>
+                                                <td class="d-flex justify-content-center">
+                                                    <a href="#"
+                                                        class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6410014101</td>
+                                                <td>จารุวรรณ ปกป้อง</td>
+                                                <td>วิศวกรรมซอฟต์แวร์</td>
+                                                <td>
+                                                    <a href="#">เปิด</a>
+                                                </td>
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
                                                 <td class="d-flex justify-content-center">
@@ -106,7 +106,7 @@
                                 <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                                     <!-- Table for Tab 2 -->
                                     <table class="table mt-2 border border-1">
-                                        <thead class="table bg-gold text-center">
+                                        <thead class="table bg-gold">
                                             <tr>
                                                 <th>รหัสนักศึกษา</th>
                                                 <th>ชื่อ-นามสกุล</th>
@@ -120,21 +120,10 @@
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
                                                 <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="text-center">
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6410014101</td>
-                                                <td>จารุวรรณ ปกป้อง</td>
-                                                <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td class="text-center">
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
                                             </tr>
@@ -142,10 +131,10 @@
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
                                                 <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
                                             </tr>
@@ -153,10 +142,21 @@
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
                                                 <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="text-center">
+                                                <td>
+                                                    <a href="#">เปิด</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6410014101</td>
+                                                <td>จารุวรรณ ปกป้อง</td>
+                                                <td>วิศวกรรมซอฟต์แวร์</td>
+                                                <td>
+                                                    <a href="#">เปิด</a>
+                                                </td>
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
                                             </tr>

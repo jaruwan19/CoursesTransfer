@@ -1,7 +1,7 @@
 @extends('officer.layout')
 @section('content')
     <div class="container p-3 border border-1 justify-content-center">
-        <h2 class="header">จัดการรายวิชา</h2>
+        <h4 class="header">จัดการรายวิชา</h4>
         <a href="{{url('add_subject')}}" class="btn outline-darkblue mt-1 my-3">เพิ่มรายวิชา</a>
         <div class="container p-0 border border-1 justify-content-center">
             <form action="" class="form" method="post">
@@ -36,7 +36,7 @@
                                     aria-labelledby="tab1-tab">
                                     <!-- Table for Tab 1 -->
                                     <table class="table mt-2 border border-1">
-                                        <thead class="table bg-gold text-center">
+                                        <thead class="table bg-gold">
                                             <tr>
                                                 <th>รหัสวิชา</th>
                                                 <th>ชื่อวิชา </th>
@@ -65,7 +65,7 @@
                                 <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                                     <!-- Table for Tab 2 -->
                                     <table class="table mt-2 border border-1">
-                                        <thead class="table bg-gold text-center">
+                                        <thead class="table bg-gold">
                                             <tr>
                                                 <th>รหัสวิชา</th>
                                                 <th>ชื่อวิชา </th>
@@ -94,7 +94,7 @@
                                 <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
                                     <!-- Table for Tab 2 -->
                                     <table class="table mt-2 border border-1">
-                                        <thead class="table bg-gold text-center">
+                                        <thead class="table bg-gold">
                                             <tr>
                                                 <th>หลักสูตร</th>
                                                 <th>สาขา </th>
