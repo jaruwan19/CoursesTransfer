@@ -100,8 +100,8 @@
                                 <td>4123315</td>
                                 <td>การบริหารโครงการซอฟต์แวร์</td>
                                 <td>3</td>
-                                <td class="text-success text-center">อนุมัติ</td>
-                                <td class="text-center">
+                                <td class="text-success">อนุมัติ</td>
+                                <td>
                                     -
                                 </td>
                             </tr>
@@ -113,8 +113,8 @@
                                 <td>4123315</td>
                                 <td>การบริหารโครงการซอฟต์แวร์</td>
                                 <td>3</td>
-                                <td class="text-danger text-center">ไม่อนุมัติ</td>
-                                <td class="text-center">
+                                <td class="text-danger">ไม่อนุมัติ</td>
+                                <td>
                                     แก้ไขรายวิชาใหม่
                                 </td>
                             </tr>

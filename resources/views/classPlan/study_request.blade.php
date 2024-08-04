@@ -47,7 +47,8 @@
                                                     <a href="#">เปิด</a>
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
-                                                <td class="d-flex justify-content-center">
+                                                {{-- <td class="d-flex justify-content-center"> --}}
+                                                <td>
                                                     <a href="{{url('check_subjects')}}"
                                                         class="btn btn-sm outline-darkblue rounded-pill w-50">ตรวจสอบ
                                                     </a>
@@ -60,7 +61,7 @@
                                     <!-- Table for Tab 2 -->
                                     <table class="table mt-2 border border-1">
                                         <thead class="table bg-gold text-center">
-                                            <tr>
+                                            <tr class="text-start">
                                                 <th>รหัสนักศึกษา</th>
                                                 <th>ชื่อ-นามสกุล</th>
                                                 <th>สาขาวิชา</th>
@@ -73,11 +74,11 @@
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
                                                 <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
-                                                <td class="d-flex justify-content-center">
+                                                <td>
                                                     <a href="{{url('data_preview')}}"
                                                         class="btn btn-sm outline-darkblue rounded-pill w-50">ดูข้อมูล</a>
                                                 </td>

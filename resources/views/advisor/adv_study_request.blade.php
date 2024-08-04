@@ -143,7 +143,7 @@
                                 <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                                     <!-- Table for Tab 2 -->
                                     <table class="table mt-2 border border-1">
-                                        <thead class="table bg-gold text-center">
+                                        <thead class="table bg-gold">
                                             <tr>
                                                 <th>รหัสนักศึกษา</th>
                                                 <th>ชื่อ-นามสกุล</th>
@@ -180,7 +180,7 @@
                                 <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
                                     <!-- Table for Tab 2 -->
                                     <table class="table mt-2 border border-1">
-                                        <thead class="table bg-gold text-center">
+                                        <thead class="table bg-gold">
                                             <tr>
                                                 <th>รหัสนักศึกษา</th>
                                                 <th>ชื่อ-นามสกุล</th>
@@ -192,22 +192,22 @@
                                             <tr>
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                     <a href="#"><i class="bi-file-pdf text-danger"></i></a>
                                                 </td>
-                                                <td class="text-center">
+                                                <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
                                             </tr>

@@ -50,7 +50,7 @@
                                                 <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="d-flex justify-content-center">
+                                                <td>
                                                     <a href="#"
                                                         class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
                                                 </td>
@@ -65,7 +65,7 @@
                                                 <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="d-flex justify-content-center">
+                                                <td>
                                                     <a href="#"
                                                         class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
                                                 </td>
@@ -80,7 +80,7 @@
                                                 <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="d-flex justify-content-center">
+                                                <td>
                                                     <a href="#"
                                                         class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
                                                 </td>
@@ -95,7 +95,7 @@
                                                 <td>
                                                     <a href="#">เปิด</a>
                                                 </td>
-                                                <td class="d-flex justify-content-center">
+                                                <td>
                                                     <a href="#"
                                                         class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
                                                 </td>

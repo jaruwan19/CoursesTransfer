@@ -55,8 +55,8 @@ Route::get('/receive_docs', function () {
 Route::get('/receive_payment', function () {
     return view('officer/receive_payment');
 });
-Route::get('/submitAll', function () {
-    return view('classPlan/submitAll');
+Route::get('/result_check', function () {
+    return view('classPlan/result_check');
 });
 Route::get('/study_request', function () {
     return view('classPlan/study_request');
