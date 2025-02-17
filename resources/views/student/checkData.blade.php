@@ -59,6 +59,7 @@
             <hr>
             </div>
             <form action="" class="form">
+                @csrf
                 <div class="container-form ">
                     <div class="row p-0">
                         <h5 class="form-header-show" >ยกเว้นหมวดศึกษาทั่วไป  15 หน่วยกิต</h5>

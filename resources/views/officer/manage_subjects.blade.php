@@ -5,6 +5,7 @@
         <a href="{{url('add_subject')}}" class="btn outline-darkblue mt-1 my-3">เพิ่มรายวิชา</a>
         <div class="container p-0 border border-1 justify-content-center">
             <form action="" class="form" method="post">
+                @csrf
                 <div class="container">
                     <div class="row">
                         <div class="col p-0">

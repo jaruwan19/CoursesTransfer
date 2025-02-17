@@ -4,6 +4,7 @@
         <h4 class="header">เพิ่มรายวิชา</h4>
         <div class="container p-2 border border-1 justify-content-center">
             <form action="" class="form" method="post">
+                @csrf
                 <div class="container">
                     <label for="type">ประเภท</label>
                     <select name="type_course" class="form-control w-25" width="100%"required>

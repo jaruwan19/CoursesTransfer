@@ -4,6 +4,7 @@
         <h4 class="header">เพิ่มรายวิชา</h4>
         <div class="container p-2 border border-1 justify-content-center">
             <form action="" class="form" method="post">
+                @csrf
                 <div class="container">
                     <div class="row">
                         <div class="col-6">

@@ -23,24 +23,25 @@
         <h4 class="header">ยื่นคำร้อง</h4>
         <div class="container border border-1 justify-content-center">
             <form action="" class="form"  method="post">
+                @csrf
                 <div class="container-form">
                     <div class="row p-0">
-                        <h5 class="form-header p-2 " > เลือกระบบเทียบโอน/ยกเว้นรายวิชา</h5>
+                        <h5 class="form-header p-2 ">เลือกระบบเทียบโอน/ยกเว้นรายวิชา</h5>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส.">
                         <label class="form-check-label" for="radio1">ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส.</label>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับปริญญาตรี">
                         <label class="form-check-label" for="radio2">ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับปริญญาตรี</label>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น">
                         <label class="form-check-label">ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น</label>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ">
                         <label class="form-check-label">เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ</label>
                     </div>
                 </div>

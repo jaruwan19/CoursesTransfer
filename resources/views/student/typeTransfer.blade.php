@@ -59,6 +59,7 @@
                 </div>
             </div>
             <form action="" class="form"  method="post">
+                @csrf
                 <div class="container-form ">
                     <div class="row p-0">
                         <h5 class="form-header p-2 " >เลือกประเภทการเทียบโอน/ยกเว้นรายวิชา</h5>

@@ -4,6 +4,7 @@
         <h4 class="header">คำร้องของนักศึกษา</h4>
         <div class="container p-0 border border-1 justify-content-center">
             <form action="" class="form" method="post">
+                @csrf
                 <div class="container">
                     <div class="row">
                         <div class="col p-0">
