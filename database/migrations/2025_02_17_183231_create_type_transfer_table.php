@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('type_transfer', function (Blueprint $table) {
-            $table->id();
+            $table->id('type_id');
+            $table->string('type_name');
             $table->timestamps();
         });
     }
