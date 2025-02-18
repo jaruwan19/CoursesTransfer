@@ -1,12 +1,17 @@
 <?php
 
-// app/Models/UserRole.php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class UserRole extends Pivot
+class User extends Model
 {
-    // This model doesn't need a lot of code. The relationship is handled by Laravel.
+    use HasFactory;
+
+    // ความสัมพันธ์ระหว่าง User และ Role (Many to Many)
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'user_role', 'user_id', 'role_id');
+    }
 }

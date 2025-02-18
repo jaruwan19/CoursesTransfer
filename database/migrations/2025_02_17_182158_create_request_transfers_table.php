@@ -22,8 +22,8 @@ return new class extends Migration
             $table->date('graduation_date');
             $table->string('student_original_code');
             $table->foreignIdFor(Major::class, 'major_original_id');  // ใช้ foreignIdFor
-            $table->string('transcrip');
-            $table->foreignIdFor(TransferSubject::class, 'trns_subj_id'); // ใช้ foreignIdFor
+            $table->string('transcript');
+            $table->foreignIdFor(TransferSubject::class, 'type_tranfer_id'); // ใช้ foreignIdFor
             $table->string('status');
             $table->timestamps();
         });
