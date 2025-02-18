@@ -31,19 +31,19 @@
                         <h5 class="form-header p-2 ">เลือกระบบเทียบโอน/ยกเว้นรายวิชา</h5>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio1" name="syst_name" value="syst_name1" onchange="toggleSections()">
+                        <input type="radio" class="form-check-input" id="radio1" name="syst_name" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส." onchange="toggleSections()">
                         <label class="form-check-label" for="radio1">ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส.</label>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio2" name="syst_name" value="syst_name2" onchange="toggleSections()">
+                        <input type="radio" class="form-check-input" id="radio2" name="syst_name" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับปริญญาตรี" onchange="toggleSections()">
                         <label class="form-check-label" for="radio2">ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับปริญญาตรี</label>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio3" name="syst_name" value="syst_name3" onchange="toggleSections()">
+                        <input type="radio" class="form-check-input" id="radio3" name="syst_name" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น" onchange="toggleSections()">
                         <label class="form-check-label">ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น</label>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio4" name="syst_name" value="syst_name4" onchange="toggleSections()">
+                        <input type="radio" class="form-check-input" id="radio4" name="syst_name" value="เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ" onchange="toggleSections()">
                         <label class="form-check-label">เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ</label>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
 
-                <!-- Additional Info (Hidden by Default) -->
+                <!-- ข้อมูลเพิ่มเติม (ซ่อนไว้ตามค่าเริ่มต้น) -->
                 <div id="additional-info-section" class="container-form mt-3" style="display: none;">
                     <div class="row p-0">
                         <h5 class="form-header p-2" >เพิ่มข้อมูล รหัสนักศึกษาเดิม และสาขาวิชาเดิม</h5>
@@ -110,11 +110,11 @@
     </div>
     <script>
         function toggleSections() {
-        // Get selected radio value
+        // รับค่า radio ที่เลือก
         const selectedOption = document.querySelector('input[name="syst_name"]:checked').value;
         
-        // Show/Hide sections based on selected option
-        if (selectedOption === "syst_name4") {
+        // แสดง/ซ่อนส่วนต่างๆ ตามตัวเลือกที่เลือก
+        if (selectedOption === "เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ") {
             document.getElementById('additional-info-section').style.display = 'block'; // Show additional info section
             document.getElementById('institution-section').style.display = 'none'; // Hide institution section
             document.getElementById('graduation-date-section').style.display = 'none'; // Hide graduation date section
@@ -124,7 +124,7 @@
             document.getElementById('graduation-date-section').style.display = 'block'; // Show graduation date section
         }
 
-        if (selectedOption === "syst_name3") {
+        if (selectedOption === "ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น") {
             document.getElementById('graduation-date-section').style.display = 'none'; // Hide graduation date section
         }
 

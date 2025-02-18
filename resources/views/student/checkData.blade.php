@@ -23,80 +23,99 @@
         <h4 class="header">ยื่นคำร้อง</h4>
         <div class="container border border-1 justify-content-center">
             <div class="container p-3">
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>ขอยกเว้นรายวิชา :</p>
+                @foreach ($system_request as $item)
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>ขอยกเว้นรายวิชา :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["syst_name"]}}</p>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <p>สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส.</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>สถาบันการศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["institution"]}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>สถาบันการศึกษาเดิม :</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>วันที่สำเร็จการศึกษา :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["graduation_date"]}}</p>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <p>วิทยาลัยเทคนิคศรีสะเกษ</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>รหัสนักศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["student_original_code"]}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>วันที่สำเร็จการศึกษา :</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>สถาบันการศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["major_original"]}}</p>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <p>20 มีนาคม 2567</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>ใบรายงานผลการเรียน :</p>
-                    </div>
-                    <div class="col-10">
-                        <a href="#">transcrip.pdf</a>
-                        <a href="#"><i class="bi-file-pdf text-danger"></i></a>
-                    </div>
-                </div>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>ใบรายงานผลการเรียน :</p>
+                        </div>
+                        <div class="col-10">
+                            <a href="#">{{$item["transcript"]}}</a>
+                            <a href="#"><i class="bi-file-pdf text-danger"></i></a>
+                        </div>
+                    </div> 
+                @endforeach
             <hr>
             </div>
             <form action="" class="form">
                 @csrf
                 <div class="container-form ">
-                    <div class="row p-0">
-                        <h5 class="form-header-show" >ยกเว้นหมวดศึกษาทั่วไป  15 หน่วยกิต</h5>
-                    </div>
+                    @foreach($system_request as $transfer)
+                        <div class="row p-0">
+                            <h5 class="form-header-show" >{{ $transfer['type_transfer']}}</h5>
+                        </div>
+                    @endforeach
+                    
                     <table class="table">
                         <thead class="table bg-gold">
-                          <tr>
-                            <th>รหัสวิชา</th>
-                            <th>ชื่อวิชา</th>
-                            <th>หน่วยกิต</th>
-                          </tr>
+                            <tr>
+                                <th>รหัสวิชา</th>
+                                <th>ชื่อวิชา</th>
+                                <th>หน่วยกิต</th>
+                            </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>4123315</td>
-                            <td>การบริหารโครงการซอฟต์แวร์</td>
-                            <td>3</td>
-                          </tr>
-                          <tr>
-                            <td>4123315</td>
-                            <td>การบริหารโครงการซอฟต์แวร์</td>
-                            <td>3</td>
-                          </tr>
+                            @foreach ($subject_transfer as $item)
+                                <tr>
+                                    <td>{{$item["subject_code"]}}</td>
+                                    <td>{{$item["subject_name"]}}</td>
+                                    <td>{{$item["cradit"]}}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
-                      </table>
+                    </table>
                 </div>
-
-                <div >
-                    <h5 class="form-header-show">ยกเว้นหมวดเลือกเสรี 6 หน่วยกิต</h5>
-                </div>
-                <div class="container border border-1 pt-2">
-                    <div class="row p-0 text-center text-darkblue fs-5">
-                        <div class="col text-end"><p>รวมหน่วยกิตที่ยกเว้นรายวิชา</p></div>
-                        <div class="col">
-                            <input class="inputShow" type="text">
+                <div class="container p-3 border rounded shadow-sm bg-light">
+                    <div class="row align-items-center text-darkblue fs-5">
+                        <div class="col text-end fw-bold">
+                            <p class="mb-0">รวมหน่วยกิตที่ยกเว้นรายวิชา</p>
                         </div>
-                        <div class="col text-start"><p>หน่วยกิต</p></div>
+                        <div class="col-auto">
+                            <input class="form-control text-center fw-bold border-0 bg-white shadow-sm px-3 fs-5" 
+                                   type="text" value="{{ $totalCredits }}" readonly style="max-width: 100px;">
+                        </div>
+                        <div class="col text-start fw-bold">
+                            <p class="mb-0">หน่วยกิต</p>
+                        </div>
                     </div>
                 </div>
 
@@ -104,7 +123,7 @@
                     <a href="{{url('/typeTransfer')}}" class="btn btn outline-darkblue btn-lg " name="cancle">ยกเลิก</a>
                     <a href="{{url('/statusRequest')}}"class="btn btn-darkblue btn-lg " name="submit">ยืนยันการยกเว้นรายวิชา</a>
                 </div>
-            </form>
+            </form> 
         </div>
     </div>
 

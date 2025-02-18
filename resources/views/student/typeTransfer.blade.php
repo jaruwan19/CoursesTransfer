@@ -23,46 +23,63 @@
         <h4 class="header">ยื่นคำร้อง</h4>
         <div class="container border border-1 justify-content-center">
             <div class="container p-3">
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>ขอยกเว้นรายวิชา :</p>
+                @foreach ($system_request as $item)
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>ขอยกเว้นรายวิชา :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["syst_name"]}}</p>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <p>สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส.</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>สถาบันการศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["institution"]}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>สถาบันการศึกษาเดิม :</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>วันที่สำเร็จการศึกษา :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["graduation_date"]}}</p>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <p>วิทยาลัยเทคนิคศรีสะเกษ</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>รหัสนักศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["student_original_code"]}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>วันที่สำเร็จการศึกษา :</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>สถาบันการศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["major_original"]}}</p>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <p>20 มีนาคม 2567</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>ใบรายงานผลการเรียน :</p>
-                    </div>
-                    <div class="col-10">
-                        <a href="#">transcrip.pdf</a>
-                        <a href="#"><i class="bi-file-pdf text-danger"></i></a>
-                        
-                    </div>
-                </div>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>ใบรายงานผลการเรียน :</p>
+                        </div>
+                        <div class="col-10">
+                            <a href="#">{{$item["transcript"]}}</a>
+                            <a href="#"><i class="bi-file-pdf text-danger"></i></a>
+                        </div>
+                    </div> 
+                @endforeach
             </div>
             <form action="" class="form"  method="post">
                 @csrf
                 <div class="container-form ">
                     <div class="row p-0">
-                        <h5 class="form-header p-2 " >เลือกประเภทการเทียบโอน/ยกเว้นรายวิชา</h5>
+                        <h5 class="form-header p-2">เลือกประเภทการเทียบโอน/ยกเว้นรายวิชา</h5>
                     </div>
                     <div class="form-check m-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
