@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('student_original_code');
             $table->foreignIdFor(Major::class, 'major_original_id');  // ใช้ foreignIdFor
             $table->string('transcript');
-            $table->foreignIdFor(TransferSubject::class, 'type_tranfer_id'); // ใช้ foreignIdFor
+            $table->foreignIdFor(TransferSubject::class, 'type_transfer_id'); // ใช้ foreignIdFor
             $table->string('status');
             $table->timestamps();
         });

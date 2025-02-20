@@ -76,7 +76,7 @@
                                                     <input type="text" class="form-control">
                                                 </td> -->
                                             </tr>
-                                            <tr>
+                                            {{-- <tr>
                                                 <td>6410014101</td>
                                                 <td>จารุวรรณ ปกป้อง</td>
                                                 <td>
@@ -131,7 +131,7 @@
                                                 <!-- <td>
                                                     <input type="text" class="form-control">
                                                 </td> -->
-                                            </tr>
+                                            </tr> --}}
                                             <tr>
                                         </tbody>
                                     </table>

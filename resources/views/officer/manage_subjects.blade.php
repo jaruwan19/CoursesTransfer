@@ -14,13 +14,13 @@
                                 <li class="nav-item " role="presentation">
                                     <button class="nav-link active fw-bold text-dark" id="tab1-tab" data-bs-toggle="tab"
                                         data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">
-                                        หมวดศึกษาทั่วไป 24 หน่วยกิต
+                                        หมวดศึกษาทั่วไป 15 หน่วยกิต
                                     </button>
                                 </li>
                                 <li class="nav-item border border-warning" role="presentation">
                                     <button class="nav-link  fw-bold text-dark" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2"
                                         type="button" role="tab" aria-controls="tab2" aria-selected="false">
-                                        หมวดศึกษาทั่วไป 15 หน่วยกิต
+                                        หมวดศึกษาทั่วไป 6 หน่วยกิต
                                     </button>
                                 </li>
                                 <li class="nav-item border border-warning" role="presentation">
@@ -50,16 +50,7 @@
                                                 <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
                                                 <td>3</td>
                                             </tr>
-                                            <tr>
-                                                <td>4123315</td>
-                                                <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
-                                                <td>3</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4123315</td>
-                                                <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
-                                                <td>3</td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -79,16 +70,7 @@
                                                 <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
                                                 <td>3</td>
                                             </tr>
-                                            <tr>
-                                                <td>4123315</td>
-                                                <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
-                                                <td>3</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4123315</td>
-                                                <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
-                                                <td>3</td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -112,13 +94,7 @@
                                                 <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
                                                 <td>3</td>
                                             </tr>
-                                            <tr>
-                                                <td>วิศวกรรมศาตรบัณฑิต</td>
-                                                <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td>4123315</td>
-                                                <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
-                                                <td>3</td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>

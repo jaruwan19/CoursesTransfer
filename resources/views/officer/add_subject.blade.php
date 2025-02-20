@@ -66,24 +66,6 @@
                                 <i class="bi bi-trash-fill text-danger"></i>
                             </td>
                         </tr>
-                        <tr>
-                            <td>4123315</td>
-                            <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
-                            <td>3</td>
-                            <td class="text-center">
-                                <i class="bi bi-pencil-square text-warning"></i>
-                                <i class="bi bi-trash-fill text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4123315</td>
-                            <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
-                            <td>3</td>
-                            <td class="text-center">
-                                <i class="bi bi-pencil-square text-warning"></i>
-                                <i class="bi bi-trash-fill text-danger"></i>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
                 <div class="row">

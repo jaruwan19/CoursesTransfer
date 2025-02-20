@@ -56,51 +56,7 @@
                                                         class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>6410014101</td>
-                                                <td>จารุวรรณ ปกป้อง</td>
-                                                <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td>
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                                <td>
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                                <td>
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6410014101</td>
-                                                <td>จารุวรรณ ปกป้อง</td>
-                                                <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td>
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                                <td>
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                                <td>
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6410014101</td>
-                                                <td>จารุวรรณ ปกป้อง</td>
-                                                <td>วิศวกรรมซอฟต์แวร์</td>
-                                                <td>
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                                <td>
-                                                    <a href="#">เปิด</a>
-                                                </td>
-                                                <td>
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
-                                                </td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>

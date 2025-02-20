@@ -123,13 +123,18 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="container border border-1 pt-2">
-                    <div class="row p-0 text-center text-darkblue fs-5">
-                        <div class="col text-end"><p>รวมหน่วยกิตที่ยกเว้นรายวิชา</p></div>
-                        <div class="col">
-                            <input class="inputShow" type="text">
+                <div class="container p-3 border rounded shadow-sm bg-light">
+                    <div class="row align-items-center text-darkblue fs-5">
+                        <div class="col text-end fw-bold">
+                            <p class="mb-0">รวมหน่วยกิตที่ยกเว้นรายวิชา</p>
                         </div>
-                        <div class="col text-start"><p>หน่วยกิต</p></div>
+                        <div class="col-auto">
+                            <input class="form-control text-center fw-bold border-0 bg-white shadow-sm px-3 fs-5" 
+                                type="text" value="15" readonly style="max-width: 100px;">
+                        </div>
+                        <div class="col text-start fw-bold">
+                            <p class="mb-0">หน่วยกิต</p>
+                        </div>
                     </div>
                 </div>
 
