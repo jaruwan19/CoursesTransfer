@@ -6,27 +6,37 @@ use Illuminate\Http\Request;
 
 class RequestTransferController extends Controller
 {
-    public function showSystemTransfer(){
-        $system_request = [
-            [
-                'syst_name'=> "สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส.",
-                'institution'=> "วิทยาลัยเทคนิคศรีสะเกษ",
-                'graduation_date'=> "20 มีนาคม 2567",
-                'student_original_code'=> "6410014114",
-                'major_original'=> "วิทยาลัยเทคนิคศรีสะเกษ",
-                'transcript'=> "transcrip.pdf",
+    public function requestTransfer(Request $request)
+    {
+        // Validate input fields
+        $validatedData = $request->validate([
+            'system_name' => 'required',
+            'institution' => 'nullable|string',
+            'graduation_date' => 'nullable|date',
+            'student_original_code' => 'nullable|string',
+            'major_original' => 'nullable|string',
+            'transcript' => 'nullable|file|mimes:pdf,jpg,png|max:2048'
+        ]);
 
-                // 'user_id' => "1", 
-                // 'syst_id' => "2", 
-                // 'inst_id' => "3", 
-                // 'graduation_date' => "20 มีนาคม 2567", 
-                // 'student_original_code' => "", 
-                // 'major_original_id' => "", 
-                // 'transcrip' => "transcrip.pdf", 
-                // 'trns_subj_id' => "1", 
-                // 'status'
-            ]
-        ];
-        return view('student/typeTransfer', compact('system_request'));       
+        // Handle file upload
+        if ($request->hasFile('transcript')) {
+            $filePath = $request->file('transcript')->store('transcripts', 'public');
+            $validatedData['transcript'] = $filePath;
+        }
+
+        // Store data in session
+        session(['requestTransfer' => $validatedData]);
+
+        // Redirect ไปยังหน้าประเภทการเทียบโอน
+        return redirect()->route('typeTransfer');
+    }
+
+    
+    public function showRequstTransfer()
+    {
+        // ดึงข้อมูลจาก Session
+        $requestTransfer = session('requestTransfer', []);
+        // dd($requestTransfer);
+        return view('student.typeTransfer', compact('requestTransfer'));
     }
 }
