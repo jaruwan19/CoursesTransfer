@@ -23,7 +23,7 @@
 
         <h4 class="header">ยื่นคำร้อง</h4>
         <div class="container border border-1 justify-content-center">
-            <form action="" class="form"  method="post">
+            <form action="{{ url('/systemTransfer') }}" class="form"  method="post" enctype="multipart/form-data">
                 @csrf
                 <!-- เลือกระบบเทียบโอน -->
                 <div class="container-form">
@@ -31,19 +31,19 @@
                         <h5 class="form-header p-2 ">เลือกระบบเทียบโอน/ยกเว้นรายวิชา</h5>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio1" name="syst_name" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส." onchange="toggleSections()">
+                        <input type="radio" class="form-check-input" id="radio1" name="system_name" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส." onchange="toggleSections()">
                         <label class="form-check-label" for="radio1">ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส.</label>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio2" name="syst_name" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับปริญญาตรี" onchange="toggleSections()">
+                        <input type="radio" class="form-check-input" id="radio2" name="system_name" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับปริญญาตรี" onchange="toggleSections()">
                         <label class="form-check-label" for="radio2">ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับปริญญาตรี</label>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio3" name="syst_name" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น" onchange="toggleSections()">
+                        <input type="radio" class="form-check-input" id="radio3" name="system_name" value="ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น" onchange="toggleSections()">
                         <label class="form-check-label">ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น</label>
                     </div>
                     <div class="form-check m-2">
-                        <input type="radio" class="form-check-input" id="radio4" name="syst_name" value="เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ" onchange="toggleSections()">
+                        <input type="radio" class="form-check-input" id="radio4" name="system_name" value="เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ" onchange="toggleSections()">
                         <label class="form-check-label">เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ</label>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         <h5 class="form-header p-2" >วันที่สำเร็จการศึกษา</h5>
                     </div>
                     <div class="m-2">
-                        <input type="date" class="form-control" id="datepicker" name="datepicker">
+                        <input type="date" class="form-control" id="graduation_date" name="graduation_date">
                     </div>
                 </div>
 
@@ -78,8 +78,8 @@
                         <h5 class="form-header p-2" >เพิ่มข้อมูล รหัสนักศึกษาเดิม และสาขาวิชาเดิม</h5>
                     </div>
                     <div class="mb-2">
-                        <label for="original_student_id" class="form-label fw-bold">รหัสนักศึกษาเดิม</label>
-                        <input type="text" class="form-control" id="original_student_id" name="original_student_id" placeholder="รหัสนักศึกษาเดิม">
+                        <label for="student_original_code" class="form-label fw-bold">รหัสนักศึกษาเดิม</label>
+                        <input type="text" class="form-control" id="student_original_code" name="student_original_code" placeholder="รหัสนักศึกษาเดิม">
                     </div>
                     <div class="mb-2">
                         <label for="major_original" class="form-label fw-bold">สาขาวิชาเดิม</label>
@@ -96,14 +96,13 @@
                     </div>
                     <div class="container-dotted p-3 mt-2" >
                         <div class="input-group ">
-                            <input type="file" class="form-control" id="inputGroupFile02">
+                            <input type="file" class="form-control" name="transcript">
                             <label class="input-group-text" for="inputGroupFile02">Upload</label>
                         </div>
                     </div>
                 </div>
                 <div class="p-2 mt-3 d-flex justify-content-end">
-                    
-                    <a href="{{url('/typeTransfer')}}" class="btn btn-darkblue btn-lg " name="submit">ยืนยัน</a>
+                    <button type="submit" class="btn btn-darkblue btn-lg">ยืนยัน</button>
                 </div>
             </form>
         </div>
@@ -111,7 +110,7 @@
     <script>
         function toggleSections() {
         // รับค่า radio ที่เลือก
-        const selectedOption = document.querySelector('input[name="syst_name"]:checked').value;
+        const selectedOption = document.querySelector('input[name="system_name"]:checked').value;
         
         // แสดง/ซ่อนส่วนต่างๆ ตามตัวเลือกที่เลือก
         if (selectedOption === "เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ") {

@@ -13,7 +13,7 @@ class SubjectTransferController extends Controller
                 'institution'=> "วิทยาลัยเทคนิคศรีสะเกษ",
                 'graduation_date'=> "20 มีนาคม 2567",
                 'student_original_code'=> "6410014114",
-                'major_original'=> "วิทยาลัยเทคนิคศรีสะเกษ",
+                'major_original'=> "วิศวกรรมซอฟต์แวร์",
                 'transcript'=> "transcrip.pdf",
                 'type_transfer'=> "ยกเว้นหมวดศึกษาทั่วไป  15 หน่วยกิต"
 

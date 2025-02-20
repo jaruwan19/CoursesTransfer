@@ -23,21 +23,23 @@
         <h4 class="header">ยื่นคำร้อง</h4>
         <div class="container border border-1 justify-content-center">
             <div class="container p-3">
-                @foreach ($system_request as $item)
-                    <div class="row">
-                        <div class="col-2 text-warning fw-bold">
-                            <p>ขอยกเว้นรายวิชา :</p>
-                        </div>
-                        <div class="col-10">
-                            <p>{{$item["syst_name"]}}</p>
-                        </div>
+                <div class="row">
+                    <div class="col-2 text-warning fw-bold">
+                        <p>ขอยกเว้นรายวิชา :</p>
                     </div>
+                    <div class="col-10">
+                        <p>{{ $requestTransfer['system_name'] ?? 'ไม่มีข้อมูล' }}</p>
+                    </div>
+                </div>
+                <!-- เงื่อนไขแสดงข้อมูลเพิ่มเติมตามตัวเลือก -->
+                @if ($requestTransfer['system_name'] === 'ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส.' ||
+                     $requestTransfer['system_name'] === 'ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับปริญญาตรี')
                     <div class="row">
                         <div class="col-2 text-warning fw-bold">
-                            <p>สถาบันการศึกษาเดิม :</p>
+                            <p>สถาบันการศึกษา :</p>
                         </div>
                         <div class="col-10">
-                            <p>{{$item["institution"]}}</p>
+                            <p>{{ $requestTransfer['institution'] ?? 'ไม่มีข้อมูล' }}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -45,35 +47,54 @@
                             <p>วันที่สำเร็จการศึกษา :</p>
                         </div>
                         <div class="col-10">
-                            <p>{{$item["graduation_date"]}}</p>
+                            <p>{{ $requestTransfer['graduation_date'] ?? 'ไม่มีข้อมูล' }}</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-2 text-warning fw-bold">
-                            <p>รหัสนักศึกษาเดิม :</p>
-                        </div>
-                        <div class="col-10">
-                            <p>{{$item["student_original_code"]}}</p>
-                        </div>
-                    </div>
+                @endif
+                @if ($requestTransfer['system_name'] === 'ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น')
                     <div class="row">
                         <div class="col-2 text-warning fw-bold">
                             <p>สถาบันการศึกษาเดิม :</p>
                         </div>
                         <div class="col-10">
-                            <p>{{$item["major_original"]}}</p>
+                            <p>{{ $requestTransfer['institution'] ?? 'ไม่มีข้อมูล' }}</p>
+                        </div>
+                    </div>
+                @endif
+
+                @if ($requestTransfer['system_name'] === 'เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ')
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>รหัสนักศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ $requestTransfer['student_original_code'] ?? 'ไม่มีข้อมูล' }}</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-2 text-warning fw-bold">
-                            <p>ใบรายงานผลการเรียน :</p>
+                            <p>สาขาวิชาเดิม :</p>
                         </div>
                         <div class="col-10">
-                            <a href="#">{{$item["transcript"]}}</a>
-                            <a href="#"><i class="bi-file-pdf text-danger"></i></a>
+                            <p>{{ $requestTransfer['major_original'] ?? 'ไม่มีข้อมูล' }}</p>
                         </div>
-                    </div> 
-                @endforeach
+                    </div>
+                @endif
+                <!-- แสดงไฟล์ใบรายงานผลการเรียน (ทุกกรณี) -->
+                <div class="row">
+                    <div class="col-2 text-warning fw-bold">
+                        <p>ใบรายงานผลการเรียน :</p>
+                    </div>
+                    <div class="col-9">
+                        @if(!empty($requestTransfer['transcript']))
+                            <a href="{{ asset('storage/' . $requestTransfer['transcript']) }}" target="_blank">
+                                ดาวน์โหลด <i class="bi bi-file-pdf text-danger"></i>
+                            </a>
+                        @else
+                            ไม่มีข้อมูล
+                        @endif
+                    </div>
+                </div>
             </div>
             <form action="" class="form"  method="post">
                 @csrf
@@ -108,8 +129,8 @@
                 </div>
                 
                 <div class="p-2 mt-3 mb-3 d-flex justify-content-between">
-                    <a href="{{url('/systemTransfer')}}" class="btn outline-darkblue btn-lg" name="cancle">ยกเลิก</a>
-                    <a href="{{url('/checkData')}}" class="btn btn-darkblue btn-lg" name="submit">ยืนยัน</a>
+                    <a href="#" onclick="history.back();" class="btn outline-darkblue btn-lg">ย้อนกลับ</a>
+                    <a href="{{ url('/checkData') }}" class="btn btn-darkblue btn-lg">ยืนยัน</a>
                 </div>
             </form>
         </div>

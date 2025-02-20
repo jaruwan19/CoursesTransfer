@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RequestTransferController;
-use App\Http\Controllers\SubjectTransferController; // Ensure this class exists in the specified namespace
 
 /*
 |--------------------------------------------------------------------------
@@ -17,19 +16,18 @@ use App\Http\Controllers\SubjectTransferController; // Ensure this class exists 
 
 Route::get('/', function () {
     return view('student/systemTransfer');
-});
+})->name('systemTransfer');
 
-Route::get('/systemTransfer', function () {
-    return view('student/systemTransfer');
-});
+Route::get('/systemTransfer', [RequestTransferController::class, 'requestTransfer'])->name('systemTransfer');
+Route::post('/systemTransfer', [RequestTransferController::class, 'requestTransfer'])->name('systemTransfer');
+Route::get('/typeTransfer', [RequestTransferController::class, 'showRequstTransfer'])->name('typeTransfer');
 
-Route::get('/typeTransfer',[RequestTransferController::class,'showSystemTransfer'])->name('typeTransfer');
 
 // Route::get('/typeTransfer', function () {
 //     return view('student/typeTransfer');
 // });
 
-Route::get('/checkData',[SubjectTransferController::class,'showSubjectTransfer'])->name('checkData');
+// Route::get('/checkData',[SubjectTransferController::class,'showSubjectTransfer'])->name('checkData');
 // Route::get('/checkData', function () {
 //     return view('student/checkData');
 // });
