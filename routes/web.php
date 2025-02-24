@@ -80,9 +80,6 @@ Route::get('/manage_subjects', function () {
 // Route::get('/receive_payment', function () {
 //     return view('officer/receive_payment');
 // });
-Route::get('/search_request', function () {
-    return view('officer/search_requests');
-});
 // Route::get('/result_check', function () {
 //     return view('classPlan/result_check');
 // });
@@ -105,15 +102,6 @@ Route::get('/search_request', function () {
 
 Route::get('/menu_officer', function () {
     return view('officer/menu');
-});
-Route::get('/receive_documents', function () {
-    return view('officer/receive_documents');
-});
-Route::get('/update_status', function () {
-    return view('officer/update_status');
-});
-Route::get('/update_payment', function () {
-    return view('officer/update_payment');
 });
 Route::get('/search_requests', function () {
     return view('officer/search_requests');
