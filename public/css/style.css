@@ -173,3 +173,87 @@ body {
     color: #D7A126;
 }
 /* step progress */
+
+/* step progress statusRequest */
+.step-status {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.step-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.step::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 30px;
+    width: 2px;
+    height: 30px;
+    background-color: #ccc;
+}
+
+.step.completed::before {
+    background-color: #4CAF50;
+}
+
+.step:last-child::before {
+    display: none;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.circle.completed {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+    font-size: 24px;
+}
+
+.text {
+    font-size: 16px;
+    color: #333;
+}
+
+.text.completed {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.step-buttons {
+    display: none;
+}
+
+.step-buttons.show {
+    display: block;
+}
+
+.step-buttons button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* step progress statusRequest */
