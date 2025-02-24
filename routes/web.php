@@ -69,6 +69,8 @@ Route::get('/add_subject02', function () {
 Route::get('/manage_subjects', function () {
     return view('officer/manage_subjects');
 });
+
+
 // Route::get('/payment_update', function () {
 //     return view('officer/payment_update');
 // });
@@ -78,8 +80,8 @@ Route::get('/manage_subjects', function () {
 // Route::get('/receive_payment', function () {
 //     return view('officer/receive_payment');
 // });
-Route::get('/serch_request', function () {
-    return view('officer/serch_request');
+Route::get('/search_request', function () {
+    return view('officer/search_requests');
 });
 // Route::get('/result_check', function () {
 //     return view('classPlan/result_check');
@@ -99,3 +101,20 @@ Route::get('/serch_request', function () {
 // Route::get('/adv_data_preview', function () {
 //     return view('advisor/adv_data_preview');
 // });
+
+
+Route::get('/menu_officer', function () {
+    return view('officer/menu');
+});
+Route::get('/receive_documents', function () {
+    return view('officer/receive_documents');
+});
+Route::get('/update_status', function () {
+    return view('officer/update_status');
+});
+Route::get('/update_payment', function () {
+    return view('officer/update_payment');
+});
+Route::get('/search_requests', function () {
+    return view('officer/search_requests');
+});
