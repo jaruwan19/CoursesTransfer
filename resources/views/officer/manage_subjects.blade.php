@@ -4,7 +4,7 @@
         <h4 class="header">จัดการรายวิชา</h4>
         <a href="{{url('add_subject')}}" class="btn outline-darkblue mt-1 my-3">เพิ่มรายวิชา</a>
         <div class="container p-0 border border-1 justify-content-center">
-            <form action="" class="form" method="post">
+            <form action="" class="form" method="POST">
                 @csrf
                 <div class="container">
                     <div class="row">

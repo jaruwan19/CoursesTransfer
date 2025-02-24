@@ -68,7 +68,7 @@
                             <p>รหัสนักศึกษาเดิม :</p>
                         </div>
                         <div class="col-10">
-                            <p>{{ $requestTransfer['student_original_code'] ?? 'ไม่มีข้อมูล' }}</p>
+                            <p>{{ $requestTransfer['student_id_original'] ?? 'ไม่มีข้อมูล' }}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            <form action="" class="form"  method="post">
+            <form action="" class="form"  method="POST">
                 @csrf
                 <div class="container-form ">
                     <div class="row p-0">

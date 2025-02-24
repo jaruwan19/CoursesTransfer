@@ -53,7 +53,7 @@
                             <p>รหัสนักศึกษาเดิม :</p>
                         </div>
                         <div class="col-10">
-                            <p>{{$item["student_original_code"]}}</p>
+                            <p>{{$item["student_id_original"]}}</p>
                         </div>
                     </div>
                     <div class="row">

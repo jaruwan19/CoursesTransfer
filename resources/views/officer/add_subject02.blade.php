@@ -3,7 +3,7 @@
     <div class="container p-3 border border-1 justify-content-center">
         <h4 class="header">เพิ่มรายวิชา</h4>
         <div class="container p-2 border border-1 justify-content-center">
-            <form action="" class="form" method="post">
+            <form action="" class="form" method="POST">
                 @csrf
                 <div class="container">
                     <div class="row">

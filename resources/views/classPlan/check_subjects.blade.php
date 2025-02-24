@@ -1,47 +1,72 @@
-@extends('student.layout')
+@extends('officer.layout')
 @section('content')
         <div class="container border border-1 justify-content-center">
             <div class="container p-3">
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>ขอยกเว้นรายวิชา :</p>
+                @foreach ($system_request as $item)
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>ขอยกเว้นรายวิชา :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["system_name"]}}</p>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <p>สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส.</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>สถาบันการศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["institution"]}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>สถาบันการศึกษาเดิม :</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>วันที่สำเร็จการศึกษา :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["graduation_date"]}}</p>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <p>วิทยาลัยเทคนิคศรีสะเกษ</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>รหัสนักศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["student_id_original"]}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>วันที่สำเร็จการศึกษา :</p>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>สถาบันการศึกษาเดิม :</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{$item["major_original"]}}</p>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <p>20 มีนาคม 2567</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 text-warning fw-bold">
-                        <p>ใบรายงานผลการเรียน :</p>
-                    </div>
-                    <div class="col-10">
-                        <a href="#">transcrip.pdf</a>
-                        <a href="#"><i class="bi-file-pdf text-danger"></i></a>
-                    </div>
-                </div>
+                    <div class="row">
+                        <div class="col-2 text-warning fw-bold">
+                            <p>ใบรายงานผลการเรียน :</p>
+                        </div>
+                        <div class="col-10">
+                            <a href="#">{{$item["transcript"]}}</a>
+                            <a href="#"><i class="bi-file-pdf text-danger"></i></a>
+                        </div>
+                    </div> 
+                @endforeach
+
                 <hr>
             </div>
             <form action="" class="form">
                 @csrf
                 <div class="container-form ">
-                    <div >
-                        <h5 class="text-darkblue"><i class="bi bi-caret-right-fill"></i> ยกเว้นหมวดศึกษาทั่วไป  15 หน่วยกิต</h5>
+                    {{-- @foreach($type_transfer as $transfer)
+                        <div class="row p-0">
+                            <h5 class="text-darkblue" >{{ $transfer['type_transfer']}}</h5>
+                            //<h5 class="text-darkblue" ><i class="bi bi-caret-right-fill">{{ $transfer['type_transfer']}}</h5>
+                        </div>
+                    @endforeach --}}
+                    <div class="row p-0">
+                        <h5 class="text-darkblue"><i class="bi bi-caret-right-fill"></i> {{ $type_transfer[0]['type_transfer']}}</h5>
                     </div>
                     <table class="table">
                         <thead class="table bg-gold">
@@ -52,33 +77,28 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>4123315</td>
-                            <td>การบริหารโครงการซอฟต์แวร์</td>
-                            <td>3</td>
-                          </tr>
-                          <tr>
-                            <td>4123315</td>
-                            <td>การบริหารโครงการซอฟต์แวร์</td>
-                            <td>3</td>
-                          </tr>
+                            @foreach ($subject_transfer as $item)
+                                <tr>
+                                    <td>{{$item["subject_code"]}}</td>
+                                    <td>{{$item["subject_name"]}}</td>
+                                    <td>{{$item["cradit"]}}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
-            
-                <div >
-                    <h5 class="text-darkblue"><i class="bi bi-caret-right-fill"></i> ยกเว้นหมวดเลือกเสรี 6 หน่วยกิต</h5>
-                </div>
 
                 <div class="container-form">
-                    <div >
-                        <h5 class="text-darkblue"><i class="bi bi-caret-right-fill"></i> ยกเว้นรายวิชาอื่นๆ</h5>
-                    </div>
+                        <div class="row p-0">
+                            <h5 class="text-darkblue"><i class="bi bi-caret-right-fill"></i> {{ $type_transfer[3]['type_transfer']}}</h5>
+                            {{-- <h5 class="text-darkblue" ><i class="bi bi-caret-right-fill">{{ $transfer['type_transfer']}}</h5> --}}
+                        </div>
                     <table class="table border border-1">
                         <thead class="table bg-gold text-center">
                             <tr class="table-light">
                                 <th colspan="4">ข้อมูลรหัสนักศึกษาเดิม</th>
-                                <th colspan="6" class="border-start">ข้อมูลรหัสนักศึกษาเดิม</th>
+                                <th colspan="3" class="border-start">ข้อมูลรหัสนักศึกษาปัจจุบัน</th>
+                                <th colspan="4" class="border-start">ประเมิน</th>
                             </tr>
                             <tr>
                                 <th>รหัสวิชา</th>
@@ -87,7 +107,7 @@
                                 <th class="border-end">เกรด</th>
                                 <th>รหัสวิชา</th>
                                 <th>ชื่อวิชา</th>
-                                <th>หน่วยกิต</th>
+                                <th class="border-end">หน่วยกิต</th>
                                 <th>อนุมัติ</th>
                                 <th>ไม่อนุมัติ</th>
                                 <th>ข้อเสนอแนะ</th>
@@ -95,27 +115,28 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>4123315</td>
-                                <td>การบริหารโครงการซอฟต์แวร์</td>
-                                <td>3</td>
-                                <td class="border-end">2.5</td>
-                                <td>4123315</td>
-                                <td>การบริหารโครงการซอฟต์แวร์</td>
-                                <td>3</td>
+                                @foreach ($original_subjects as $item)
+                                        <td>{{$item["subject_code"]}}</td>
+                                        <td>{{$item["subject_name"]}}</td>
+                                        <td>{{$item["cradit"]}}</td>
+                                        <td class="border-end">{{$item["grad"]}}</td>
+                                @endforeach
+                                @foreach ($current_subjects as $item)
+                                        <td>{{$item["subject_code"]}}</td>
+                                        <td>{{$item["subject_name"]}}</td>
+                                        <td class="border-end">{{$item["cradit"]}}</td>
+                                @endforeach
                                 <td>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                        </label>
+                                        <input class="form-check-input single-checkbox" type="checkbox" value="1" required>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                        </label>
+                                        <input class="form-check-input single-checkbox" type="checkbox" value="2" required>
                                     </div>
                                 </td>
+                                
                                 <td>
                                     <input type="text" class="form-control">
                                 </td>
@@ -130,7 +151,7 @@
                         </div>
                         <div class="col-auto">
                             <input class="form-control text-center fw-bold border-0 bg-white shadow-sm px-3 fs-5" 
-                                type="text" value="15" readonly style="max-width: 100px;">
+                                type="text" value="18" readonly style="max-width: 100px;">
                         </div>
                         <div class="col text-start fw-bold">
                             <p class="mb-0">หน่วยกิต</p>
@@ -140,7 +161,7 @@
 
                 <div class="container py-3 ">
                     <h6 class="fw-bold">ข้อเสนอแนะเพิ่มเติม</h6>
-                    <textarea class="w-100 p-2" rows="4" name="comment" form="usrform">-</textarea>
+                    <textarea class="w-100 p-2" rows="4" name="comment" form="usrform"></textarea>
                 </div>
 
                 <div class="p-2 mt-3 mb-3 d-flex justify-content-between">
@@ -150,4 +171,18 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        let checkboxes = document.querySelectorAll(".single-checkbox");
+
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener("change", function() {
+                checkboxes.forEach(cb => {
+                    if (cb !== checkbox) cb.checked = false;
+                });
+            });
+        });
+    });
+    </script>
 @endsection

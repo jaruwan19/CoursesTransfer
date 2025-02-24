@@ -1,7 +1,7 @@
 @extends('officer.layout')
 @section('content')
     <div class="container p-3 border border-1 justify-content-center">
-        <h4 class="header">อัปเดตการชำระเงิน</h4>
+        <h4 class="header">คำร้องของนักศึกษา</h4>
         <div class="container p-0 border border-1 justify-content-center">
             <form action="" class="form" method="POST">
                 @csrf
@@ -19,7 +19,13 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link  fw-bold text-warning" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2"
                                         type="button" role="tab" aria-controls="tab2" aria-selected="false">
-                                        อัปเดตแล้ว
+                                        ไม่เห็นชอบ
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link  fw-bold text-warning" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3"
+                                        type="button" role="tab" aria-controls="tab3" aria-selected="false">
+                                        เห็นชอบ
                                     </button>
                                 </li>
                             </ul>
@@ -34,33 +40,45 @@
                                             <tr>
                                                 <th>รหัสนักศึกษา</th>
                                                 <th>ชื่อ-นามสกุล</th>
-                                                <th>สาขาวิชา</th>
+                                                <th>ไฟล์ทรานสคริป</th>
                                                 <th>ข้อมูลคำร้อง</th>
-                                                <th>หลักฐานการชำระเงิน</th>
-                                                <th>อัปเดต</th>
+                                                <th>เห็นชอบ</th>
+                                                <th>ไม่เห็นชอบ</th>
+                                                <!-- <th>ข้อเสนอแนะ</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($student_requests as $item)
                                                 <tr>
-                                                    <td>{{ $item['student_id' ]}}</td>
+                                                    <td>{{ $item['student_id'] }}</td>
                                                     <td>{{ $item['student_name'] }}</td>
-                                                    <td>{{ $item['major_name'] }}</td>
+                                                    <td>
+                                                        <a href="{{ $item['transcript'] }}">เปิด</a>
+                                                        <a href="#"><i class="bi-file-pdf text-danger"></i></a>
+                                                    </td>
                                                     <td>
                                                         <a href="{{url('data_preview')}}"
                                                             class="btn btn-sm outline-darkblue rounded-pill w-50">ดูข้อมูล</a>
                                                     </td>
                                                     <td>
-                                                        <a href="#"
-                                                            class="btn btn-sm outline-darkblue rounded-pill w-50">ดูข้อมูล</a>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input single-checkbox" type="checkbox" value="1" required>
+                                                        </div>
                                                     </td>
                                                     <td>
-                                                        <a href="#" class="btn btn-sm btn-darkblue rounded-pill w-75">อัปเดต</a>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input single-checkbox" type="checkbox" value="2" required>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    <div class="row">
+                                        <div class="col text-center"> <!-- Use text-center to align the button -->
+                                          <input type="button" class="btn btn-success" value="ยืนยัน">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                                     <!-- Table for Tab 2 -->
@@ -69,23 +87,50 @@
                                             <tr>
                                                 <th>รหัสนักศึกษา</th>
                                                 <th>ชื่อ-นามสกุล</th>
-                                                <th>สาขาวิชา</th>
+                                                <th>ไฟล์ทรานสคริป</th>
                                                 <th>ข้อมูลคำร้อง</th>
-                                                <th>หลักฐานการชำระเงิน</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($student_requests as $item)
                                                 <tr>
-                                                    <td>{{ $item['student_id' ]}}</td>
+                                                    <td>{{ $item['student_id'] }}</td>
                                                     <td>{{ $item['student_name'] }}</td>
-                                                    <td>{{ $item['major_name'] }}</td>
+                                                    <td>
+                                                        <a href="{{ $item['transcript'] }}">เปิด</a>
+                                                        <a href="#"><i class="bi-file-pdf text-danger"></i></a>
+                                                    </td>
                                                     <td>
                                                         <a href="{{url('data_preview')}}"
                                                             class="btn btn-sm outline-darkblue rounded-pill w-50">ดูข้อมูล</a>
                                                     </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                                    <!-- Table for Tab 2 -->
+                                    <table class="table mt-2 border border-1">
+                                        <thead class="table bg-gold">
+                                            <tr>
+                                                <th>รหัสนักศึกษา</th>
+                                                <th>ชื่อ-นามสกุล</th>
+                                                <th>ไฟล์ทรานสคริป</th>
+                                                <th>ข้อมูลคำร้อง</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($student_requests as $item)
+                                                <tr>
+                                                    <td>{{ $item['student_id'] }}</td>
+                                                    <td>{{ $item['student_name'] }}</td>
                                                     <td>
-                                                        <a href="#"
+                                                        <a href="{{ $item['transcript'] }}">เปิด</a>
+                                                        <a href="#"><i class="bi-file-pdf text-danger"></i></a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{url('data_preview')}}"
                                                             class="btn btn-sm outline-darkblue rounded-pill w-50">ดูข้อมูล</a>
                                                     </td>
                                                 </tr>
@@ -114,5 +159,18 @@
       link.classList.add('active');
     });
   });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    let checkboxes = document.querySelectorAll(".single-checkbox");
+
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener("change", function() {
+            checkboxes.forEach(cb => {
+                if (cb !== checkbox) cb.checked = false;
+            });
+        });
+    });
+    });
 </script>
+
 @endsection

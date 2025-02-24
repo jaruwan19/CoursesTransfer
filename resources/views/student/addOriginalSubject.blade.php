@@ -39,7 +39,7 @@
                 </div>
             <hr>
             </div>
-            <form action="" class="form"  method="post">
+            <form action="" class="form"  method="POST">
               @csrf
                 <div class="container-form ">
                     <div class="row p-0">

@@ -25,14 +25,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>6410014101</td>
-                        <td>จารุวรรณ ปกป้อง</td>
-                        <td>วิศวกรรมซอฟต์แวร์</td>
-                        <td>
-                            <a href="#">เปิด</a>
-                        </td>
-                    </tr>
+                    @foreach($student_requests as $item)
+                        <tr>
+                            <td>{{ $item['student_id'] }}</td>
+                            <td>{{ $item['student_name'] }}</td>
+                            <td>{{ $item['major_name'] }}</td>
+                            <td>
+                                <a href="{{url('data_preview')}}"
+                                    class="btn btn-sm outline-darkblue rounded-pill w-50">ดูข้อมูล</a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

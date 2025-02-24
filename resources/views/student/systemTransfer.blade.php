@@ -1,5 +1,5 @@
-    @extends('student.layout')
-    @section('content')
+@extends('student.layout')
+@section('content')
     <div class="container p-3 border border-1 justify-content-center">
         <!-- Stepprogress -->
         <div>
@@ -23,7 +23,7 @@
 
         <h4 class="header">ยื่นคำร้อง</h4>
         <div class="container border border-1 justify-content-center">
-            <form action="{{ url('/systemTransfer') }}" class="form"  method="post" enctype="multipart/form-data">
+            <form action="{{ route('requestTransfer') }}" class="form"  method="POST" enctype="multipart/form-data">
                 @csrf
                 <!-- เลือกระบบเทียบโอน -->
                 <div class="container-form">
@@ -78,8 +78,8 @@
                         <h5 class="form-header p-2" >เพิ่มข้อมูล รหัสนักศึกษาเดิม และสาขาวิชาเดิม</h5>
                     </div>
                     <div class="mb-2">
-                        <label for="student_original_code" class="form-label fw-bold">รหัสนักศึกษาเดิม</label>
-                        <input type="text" class="form-control" id="student_original_code" name="student_original_code" placeholder="รหัสนักศึกษาเดิม">
+                        <label for="student_id_original" class="form-label fw-bold">รหัสนักศึกษาเดิม</label>
+                        <input type="text" class="form-control" id="student_id_original" name="student_id_original" placeholder="รหัสนักศึกษาเดิม">
                     </div>
                     <div class="mb-2">
                         <label for="major_original" class="form-label fw-bold">สาขาวิชาเดิม</label>
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="p-2 mt-3 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-darkblue btn-lg">ยืนยัน</button>
+                    <button type="submit" class="btn btn-darkblue btn-lg">ถัดไป</button>
                 </div>
             </form>
         </div>
