@@ -264,8 +264,8 @@ body {
 .menuofficer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 800px;
+    gap: 60px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
 }
@@ -276,7 +276,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     border: 2px solid #D7A126;
     border-radius: 10px;
     background-color: white;
@@ -286,8 +286,8 @@ body {
 }
 
 .menuofficer-button img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 10px;
 }
 
