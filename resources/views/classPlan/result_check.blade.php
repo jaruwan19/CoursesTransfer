@@ -27,7 +27,7 @@
                             <p>{{$item["graduation_date"]}}</p>
                         </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-2 text-warning fw-bold">
                             <p>รหัสนักศึกษาเดิม :</p>
                         </div>
@@ -42,7 +42,7 @@
                         <div class="col-10">
                             <p>{{$item["major_original"]}}</p>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row">
                         <div class="col-2 text-warning fw-bold">
                             <p>ใบรายงานผลการเรียน :</p>
@@ -80,7 +80,7 @@
                                 <tr>
                                     <td>{{$item["subject_code"]}}</td>
                                     <td>{{$item["subject_name"]}}</td>
-                                    <td>{{$item["cradit"]}}</td>
+                                    <td>{{$item["credit"]}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -116,13 +116,13 @@
                                 @foreach ($original_subjects as $item)
                                         <td>{{$item["subject_code"]}}</td>
                                         <td>{{$item["subject_name"]}}</td>
-                                        <td>{{$item["cradit"]}}</td>
+                                        <td>{{$item["credit"]}}</td>
                                         <td class="border-end">{{$item["grad"]}}</td>
                                 @endforeach
                                 @foreach ($current_subjects as $item)
                                         <td>{{$item["subject_code"]}}</td>
                                         <td>{{$item["subject_name"]}}</td>
-                                        <td class="border-end">{{$item["cradit"]}}</td>
+                                        <td class="border-end">{{$item["credit"]}}</td>
                                 @endforeach
                                 @foreach ($result as $item)
                                     @if($item["status"] == True)

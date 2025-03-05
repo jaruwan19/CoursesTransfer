@@ -19,14 +19,14 @@
                             <p>{{$item["institution"]}}</p>
                         </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-2 text-warning fw-bold">
                             <p>วันที่สำเร็จการศึกษา :</p>
                         </div>
                         <div class="col-10">
                             <p>{{$item["graduation_date"]}}</p>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row">
                         <div class="col-2 text-warning fw-bold">
                             <p>รหัสนักศึกษาเดิม :</p>
@@ -65,7 +65,7 @@
                         </div>
                     @endforeach --}}
                     <div class="row p-0">
-                        <h5 class="text-darkblue"><i class="bi bi-caret-right-fill"></i> {{ $type_transfer[0]['type_transfer']}}</h5>
+                        <h5 class="text-darkblue">{{ $type_transfer[0]['type_transfer']}}</h5>
                     </div>
                     <table class="table">
                         <thead class="table bg-gold">
@@ -80,7 +80,7 @@
                                 <tr>
                                     <td>{{$item["subject_code"]}}</td>
                                     <td>{{$item["subject_name"]}}</td>
-                                    <td>{{$item["cradit"]}}</td>
+                                    <td>{{$item["credit"]}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -89,7 +89,7 @@
 
                 <div class="container-form">
                         <div class="row p-0">
-                            <h5 class="text-darkblue"><i class="bi bi-caret-right-fill"></i> {{ $type_transfer[3]['type_transfer']}}</h5>
+                            <h5 class="text-darkblue">{{ $type_transfer[3]['type_transfer']}}</h5>
                             {{-- <h5 class="text-darkblue" ><i class="bi bi-caret-right-fill">{{ $transfer['type_transfer']}}</h5> --}}
                         </div>
                     <table class="table border border-1">
@@ -116,13 +116,13 @@
                                 @foreach ($original_subjects as $item)
                                         <td>{{$item["subject_code"]}}</td>
                                         <td>{{$item["subject_name"]}}</td>
-                                        <td>{{$item["cradit"]}}</td>
+                                        <td>{{$item["credit"]}}</td>
                                         <td class="border-end">{{$item["grad"]}}</td>
                                 @endforeach
                                 @foreach ($current_subjects as $item)
                                         <td>{{$item["subject_code"]}}</td>
                                         <td>{{$item["subject_name"]}}</td>
-                                        <td class="border-end">{{$item["cradit"]}}</td>
+                                        <td class="border-end">{{$item["credit"]}}</td>
                                 @endforeach
                                 @foreach ($result as $item)
                                     @if($item["status"] == True)
