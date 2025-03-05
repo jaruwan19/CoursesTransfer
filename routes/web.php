@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 use App\Http\Controllers\RequestTransferController;
 use App\Http\Controllers\RequestToClassPlanController;
 use App\Http\Controllers\RequestToAdvisorController;
 use App\Http\Controllers\OfficerWorkController;
+use App\Http\Controllers\ManageSubjectController;
+use App\Http\Controllers\MenuOfficerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,80 +32,38 @@ Route::get('/OffLogin', function () {
 
 Route::get('/request-transfer', [RequestTransferController::class, 'requestTransferForm'])->name('requestTransferForm');
 Route::post('/request-transfer', [RequestTransferController::class, 'requestTransfer'])->name('requestTransfer');
-Route::get('/type-transfer', [RequestTransferController::class, 'showRequstTransfer'])->name('typeTransfer');
-Route::get('/checkData',[RequestTransferController::class,'showAllRequestTransfer'])->name('checkData');
+
+Route::get('/type-transfer', [RequestTransferController::class, 'showRequestTransfer'])->name('typeTransfer');
+Route::post('/type-transfer', [RequestTransferController::class, 'storeTypeTransfer'])->name('storeTypeTransfer');
+
+Route::post('/add-other-courses', [RequestTransferController::class, 'addOtherCourses'])->name('addOtherCourses');
+
+Route::get('/add-subject', [RequestTransferController::class, 'showAddSubject'])->name('addSubject');
+Route::post('/store-add-subject', [RequestTransferController::class, 'storeAddSubject'])->name('storeAddSubject');
+
+Route::get('/add--original-subject', [RequestTransferController::class, 'showAddOriginalSubject'])->name('addOriginalSubject');
+Route::post('/store-add-original-subject', [RequestTransferController::class, 'storeAddOriginalSubject'])->name('storeAddOriginalSubject');
+
+Route::get('/check-data', [RequestTransferController::class, 'showCheckData'])->name('checkData');
+
+Route::get('/statusRequest', [RequestTransferController::class, 'statusRequest'])->name('statusRequest');
+Route::post('/confirmTransfer', [RequestTransferController::class, 'confirmTransfer'])->name('confirmTransfer');
 
 Route::get('/student_request', [RequestToClassPlanController::class, 'showStudentRequest'])->name('student_request');
 Route::get('/check_subjects', [RequestToClassPlanController::class, 'showDataRequest'])->name('check_subjects');
 Route::get('/result_check', [RequestToClassPlanController::class, 'showResultCheck'])->name('result_check');
 Route::get('/data_preview', [RequestToClassPlanController::class, 'showDataPreview'])->name('data_preview');
+
 Route::get('/adv_student_request', [RequestToAdvisorController::class, 'showStudentRequest'])->name('adv_student_request');
+
 Route::get('/receive_docs', [OfficerWorkController::class, 'recieveDocsRequest'])->name('receive_docs');
 Route::get('/receive_payment', [OfficerWorkController::class, 'recievePaymentRequest'])->name('receive_payment');
 Route::get('/payment_update', [OfficerWorkController::class, 'paymentUpdate'])->name('payment_update');
 
-// Route::get('/typeTransfer', function () {
-//     return view('student/typeTransfer');
-// });
+Route::get('/manage_subjects', [ManageSubjectController::class, 'showSubjects'])->name('manage_subject');
 
-// Route::get('/checkData', function () {
-//     return view('student/checkData');
-// });
-Route::get('/statusRequest', function () {
-    return view('status/statusRequest');
-});
-Route::get('/statusPayment', function () {
-    return view('status/statusPayment');
-});
-Route::get('/addSubject', function () {
-    return view('student/addSubject');
-});
-Route::get('/addOriginalSubject', function () {
-    return view('student/addOriginalSubject');
-});
-Route::get('/add_subject', function () {
-    return view('officer/add_subject');
-});
-Route::get('/add_subject02', function () {
-    return view('officer/add_subject02');
-});
-Route::get('/manage_subjects', function () {
-    return view('officer/manage_subjects');
-});
+Route::get('/menu', [MenuOfficerController::class, 'selectMenu'])->name('menu.index');
 
-
-// Route::get('/payment_update', function () {
-//     return view('officer/payment_update');
-// });
-// Route::get('/receive_docs', function () {
-//     return view('officer/receive_docs');
-// });
-// Route::get('/receive_payment', function () {
-//     return view('officer/receive_payment');
-// });
-// Route::get('/result_check', function () {
-//     return view('classPlan/result_check');
-// });
-// Route::get('/student_request', function () {
-//     return view('classPlan/student_request');
-// })->name('student_request');
-// Route::get('/data_preview', function () {
-//     return view('classPlan/data_preview');
-// });
-// Route::get('/check_subjects', function () {
-//     return view('classPlan/check_subjects');
-// });
-// Route::get('/adv_student_request', function () {
-//     return view('advisor/adv_student_request');
-// });
-// Route::get('/adv_data_preview', function () {
-//     return view('advisor/adv_data_preview');
-// });
-
-
-Route::get('/menu_officer', function () {
-    return view('officer/menu');
-});
 Route::get('/search_requests', function () {
     return view('officer/search_requests');
 });
