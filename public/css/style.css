@@ -439,3 +439,22 @@ body {
     color: white;
 }
 /* หน้า search_requests*/
+
+/* หน้า search_requests modal*/
+.evidence-upload-container {
+    border-radius: 10px;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.evidence-upload-label {
+    border-radius: 10px;
+    border: 2px dashed #0E4270;
+    font-size: 1.2rem;
+    color: #ccc; 
+    padding: 60px;
+    cursor: pointer;
+    
+}
+/* หน้า search_requests ของ modal*/
