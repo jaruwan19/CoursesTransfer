@@ -6,15 +6,44 @@
             <form action="" class="form" method="POST">
                 @csrf
                 <div class="container">
-                    <label for="type">ประเภท</label>
-                    <select name="type_course" class="form-control w-25" width="100%"required>
-                        <option value="" disabled selected hidden></option>
-                        <option value="ศึกษาทั่วไป 24 หน่วยกิต">ศึกษาทั่วไป 24 หน่วยกิต</option>
-                        <option value="ศึกษาทั่วไป 15 หน่วยกิต">ศึกษาทั่วไป 15 หน่วยกิต</option>
-                        <option value="หมวดวิชาเฉพาะ">หมวดวิชาเฉพาะ</option>
-                    </select>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="type">ประเภทการเทียบโอน/ยกเว้นรายวิชา</label>
+                            <select class="form-select" name="exemption" id="exemption" width="100%" required>
+                                <option selected disabled>เลือกประเภท</option>
+                                <option value="ศึกษาทั่วไป 15 หน่วยกิต">หมวดศึกษาทั่วไป 15 หน่วยกิต</option>
+                                <option value="หมวดวิชาเฉพาะ">หมวดวิชาเฉพาะ</option>
+                                <option value="รายวิชาอื่นๆ">รายวิชาอื่นๆ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-2" id="course-major-container" style="display: none;">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="course_name">หลักสูตร</label>
+                                <select class="form-select" name="course_name" width="100%" required>
+                                    <option selected disabled>เลือกหลักสูตร</option>
+                                    <option value="วิทยาศาสตรบัณฑิต">วิทยาศาสตรบัณฑิต</option>
+                                    <option value="วิศวกรรมศาตรบัณฑิต">วิศวกรรมศาตรบัณฑิต</option>
+                                    <option value="เทคโนโลยีบัณฑิต">เทคโนโลยีบัณฑิต</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="major_name">สาขา</label>
+                                <select class="form-select" name="major_name" width="100%" required>
+                                    <option selected disabled>เลือกสาขาวิชา</option>
+                                    <option value="เทคโนโลยีคอมพิวเตอร์และดิจิทัล">เทคโนโลยีคอมพิวเตอร์และดิจิทัล</option>
+                                    <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
+                                    <option value="เทคโนโลยีการจัดการอุตสาหกรรม">เทคโนโลยีการจัดการอุตสาหกรรม</option>
+                                    <option value="ออกแบบผลิตภัณฑ์อุตสาหกรรม">ออกแบบผลิตภัณฑ์อุตสาหกรรม</option>
+                                    <option value="วิศวกรรมโลจิสติกส์">วิศวกรรมโลจิสติกส์</option>
+                                    <option value="วิศวกรรมซอฟต์แวร์">วิศวกรรมซอฟต์แวร์</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
-                
                 <table class="table mt-2 border border-1">
                     <thead class="table bg-gold">
                         <tr>
@@ -29,23 +58,13 @@
                     <tbody>
                         <tr>
                             <td>
-                                <select name="course_code" class="form-control"  width="100%" required>
-                                    <option value="" disabled selected hidden></option>
-                                    <option value="4123315">4123315</option>
-                                    <option value="4123315">4123315</option>
-                                    <option value="4123315">4123315</option>
-                                </select>
-                              </td>
-                            <td>
-                                <select name="subject_name" class="form-control"  width="100%"required>
-                                    <option value="" disabled selected hidden></option>
-                                    <option value="การบริหารโครงการซอฟต์แวร์">การบริหารโครงการซอฟต์แวร์</option>
-                                    <option value="การบริหารโครงการซอฟต์แวร์">การบริหารโครงการซอฟต์แวร์</option>
-                                    <option value="การบริหารโครงการซอฟต์แวร์">การบริหารโครงการซอฟต์แวร์</option>
-                                </select>
+                                <input type="text" class="form-control" name="subject_code" width="100%" required>
                             </td>
                             <td>
-                                <select name="count_unit" class="form-control"  width="100%"required>
+                                <input type="text" class="form-control" name="subject_name" width="100%" required>
+                            </td>
+                            <td>
+                                <select name="count_unit" class="form-select" width="100%"required>
                                     <option value="" disabled selected hidden></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -55,15 +74,6 @@
                             <td class="text-center">
                                 <i class="bi bi-check-circle text-success"></i>
                                 <i class="bi bi-x-circle text-danger"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4123315</td>
-                            <td>การบริหารจัดการโครงการซอฟต์แวร์</td>
-                            <td>3</td>
-                            <td class="text-center">
-                                <i class="bi bi-pencil-square text-warning"></i>
-                                <i class="bi bi-trash-fill text-danger"></i>
                             </td>
                         </tr>
                     </tbody>
@@ -77,19 +87,23 @@
             </form>
         </div>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom JavaScript -->
-<script>
-  // Add event listener to each tab link
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      // Remove 'active' class from all links
-      document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
-      // Add 'active' class to the clicked link
-      link.classList.add('active');
-    });
-  });
-</script>
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+        document.getElementById('exemption').addEventListener('change', function() {
+            const courseMajorContainer = document.getElementById('course-major-container');
+            if (this.value === 'หมวดวิชาเฉพาะ') {
+                courseMajorContainer.style.display = 'block';
+            } else {
+                courseMajorContainer.style.display = 'none';
+            }
+        });
+    </script>
 @endsection
