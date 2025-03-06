@@ -1,5 +1,19 @@
-@extends('officer.layout')
+@extends('layout')
 @section('content')
+    <div class="p-3 container d-flex justify-content-between">
+        <div>
+            <h6 class="fw-bolder">รหัสนักศึกษา :</h6>
+            <h6>{{ $user['student_id'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+        <div>
+            <h6 class="fw-bolder">ชื่อ :</h6>
+            <h6>{{ $user['student_name'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+        <div>
+            <h6 class="fw-bolder">สาขาวิชา :</h6>
+            <h6>{{ $user['major_name'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+    </div>
         <div class="container border border-1 justify-content-center">
             <div class="container p-3">
                 @foreach ($system_request as $item)
@@ -165,7 +179,7 @@
                 </div>
 
                 <div class="p-2 mt-3 mb-3 d-flex justify-content-between">
-                    <a href="{{url('study_request')}}" class="btn btn outline-darkblue btn-lg " name="cancle">ยกเลิก</a>
+                    <a href="#" onclick="history.back();" class="btn outline-darkblue btn-lg">ย้อนกลับ</a>
                     <a href="{{url('result_check')}}" class="btn btn-darkblue btn-lg " name="submit">ยืนยัน</a>
                 </div>
             </form>
