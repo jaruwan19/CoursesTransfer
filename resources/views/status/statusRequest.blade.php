@@ -1,5 +1,19 @@
-@extends('student.layout')
+@extends('layout')
 @section('content')
+    <div class="p-3 container d-flex justify-content-between">
+        <div>
+            <h6 class="fw-bolder">รหัสนักศึกษา :</h6>
+            <h6>{{ $user['student_id'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+        <div>
+            <h6 class="fw-bolder">ชื่อ :</h6>
+            <h6>{{ $user['student_name'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+        <div>
+            <h6 class="fw-bolder">สาขาวิชา :</h6>
+            <h6>{{ $user['major_name'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+    </div>
     <div class="container p-3 border border-1 justify-content-center">
         <h4 class="header">สถานะคำร้อง</h4>
         <div class="container border border-1 justify-content-center">
@@ -181,7 +195,7 @@
                         }
 
                         function copyLink() {
-                            // แทนที่ 'YOUR_LINK_HERE' ด้วยลิงก์ที่คุณต้องการคัดลอก
+                            // แทนที่ 'YOUR_LINK_HERE' ด้วยลิงก์ที่คุณต้องการคัดลอกgoToEditPageedit-request.html
                             const link = 'YOUR_LINK_HERE';
                             const tempInput = document.createElement('input');
                             tempInput.value = link;

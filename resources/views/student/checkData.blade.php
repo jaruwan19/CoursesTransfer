@@ -1,5 +1,19 @@
-@extends('student.layout')
+@extends('layout')
 @section('content')
+    <div class="p-3 container d-flex justify-content-between">
+        <div>
+            <h6 class="fw-bolder">รหัสนักศึกษา :</h6>
+            <h6>{{ $user['student_id'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+        <div>
+            <h6 class="fw-bolder">ชื่อ :</h6>
+            <h6>{{ $user['student_name'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+        <div>
+            <h6 class="fw-bolder">สาขาวิชา :</h6>
+            <h6>{{ $user['major_name'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+    </div>
     <div class="container p-3 border border-1 justify-content-center">
         <!-- Stepprogress -->
         <div>
@@ -249,7 +263,7 @@
                                     <tr>
                                         <td>{{ $subject['subject_code'] }}</td>
                                         <td>{{ $subject['subject_name'] }}</td>
-                                        <td>{{ $subject['credits'] }}</td>
+                                        <td>{{ $subject['credit'] }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -281,7 +295,7 @@
                                     <tr>
                                         <td>{{ $subject['subject_code'] }}</td>
                                         <td>{{ $subject['subject_name'] }}</td>
-                                        <td>{{ $subject['credits'] }}</td>
+                                        <td>{{ $subject['credit'] }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
