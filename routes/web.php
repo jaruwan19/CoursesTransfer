@@ -19,10 +19,8 @@ use App\Http\Controllers\MenuOfficerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [RequestTransferController::class, 'index'])->name('systemTransfer');
 
-Route::get('/', function () {
-    return view('student.systemTransfer');
-});
 Route::get('/StuLogin', function () {
     return view('login_student');
 });
@@ -61,6 +59,8 @@ Route::get('/receive_payment', [OfficerWorkController::class, 'recievePaymentReq
 Route::get('/payment_update', [OfficerWorkController::class, 'paymentUpdate'])->name('payment_update');
 
 Route::get('/manage_subjects', [ManageSubjectController::class, 'showSubjects'])->name('manage_subject');
+Route::get('add_subject', [ManageSubjectController::class, 'create'])->name('add_subject.create');
+Route::post('add_subject', [ManageSubjectController::class, 'store'])->name('add_subject.store');
 
 Route::get('/menu', [MenuOfficerController::class, 'selectMenu'])->name('menu.index');
 

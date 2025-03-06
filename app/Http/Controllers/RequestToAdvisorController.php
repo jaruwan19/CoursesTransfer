@@ -8,14 +8,18 @@ class RequestToAdvisorController extends Controller
 {
     public function showStudentRequest()
     {
+        $user = [
+            'advisor_name' => 'ดร.ปฏิมากร จริยฐิติพงศ์',
+            'major_name' => 'วิศวกรรมซอฟต์แวร์'
+        ];
+
         $student_requests = [
             [
-                'student_id' => '1234567890',
-                'student_name' => 'นางสาวสมใจ หวังดี',
-                'transcript'=> "transcrip.pdf",
+                'student_id' => '6410014107',
+                'student_name' => 'นาย ภัทรนันท์ ประสานสุข',
+                'transcript' => "transcrip.pdf",
             ]
         ];
-        return view('advisor.adv_student_request', compact('student_requests'));
+        return view('advisor.adv_student_request', compact('user', 'student_requests'));
     }
-        
 }

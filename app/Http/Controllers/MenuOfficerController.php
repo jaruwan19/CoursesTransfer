@@ -8,6 +8,10 @@ class MenuOfficerController extends Controller
 {
     public function selectMenu()
     {
+        $user = [
+            'officer_name' => 'ดร.ปฏิมากร จริยฐิติพงศ์',
+        ];
+
         $menuItems = [
             ['route' => '/receive_docs', 'img' => 'petition.png', 'text' => 'รับเอกสารคำร้อง'],
             ['route' => '/receive_payment', 'img' => 'updated.png', 'text' => 'อัปเดตสถานะเพื่อแจ้งพิมพ์ใบชำระเงิน'],
@@ -17,6 +21,6 @@ class MenuOfficerController extends Controller
         ];
 
         // ส่งข้อมูลเมนูไปยัง View
-        return view('officer.menu', compact('menuItems'));
+        return view('officer.menu', compact('user', 'menuItems'));
     }
 }

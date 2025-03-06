@@ -1,9 +1,15 @@
-@extends('officer.layout')
+@extends('layout')
 @section('content')
+    <div class="p-3 container d-flex justify-content-between">
+        <div>
+            <h6 class="fw-bolder">ชื่อ :</h6>
+            <h6>{{ $user['officer_name'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+    </div>
     <div class="container p-3 border border-1 justify-content-center">
         <h4 class="header">เพิ่มรายวิชา</h4>
         <div class="container p-2 border border-1 justify-content-center">
-            <form action="" class="form" method="POST">
+            <form action="{{ route('add_subject.store') }}" class="form" method="POST">
                 @csrf
                 <div class="container">
                     <div class="row">
@@ -41,7 +47,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <table class="table mt-2 border border-1">
@@ -64,7 +70,7 @@
                                 <input type="text" class="form-control" name="subject_name" width="100%" required>
                             </td>
                             <td>
-                                <select name="count_unit" class="form-select" width="100%"required>
+                                <select name="credit" class="form-select" width="100%"required>
                                     <option value="" disabled selected hidden></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>

@@ -1,5 +1,15 @@
-@extends('officer.layout')
+@extends('layout')
 @section('content')
+    <div class="p-3 container d-flex justify-content-between">
+        <div>
+            <h6 class="fw-bolder">ชื่อ :</h6>
+            <h6>{{ $user['advisor_name'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+        <div>
+            <h6 class="fw-bolder">สาขา :</h6>
+            <h6>{{ $user['major_name'] ?? 'ไม่พบข้อมูล' }}</h6>
+        </div>
+    </div>
     <div class="container p-3 border border-1 justify-content-center">
         <h4 class="header">คำร้องของนักศึกษา</h4>
         <div class="container p-0 border border-1 justify-content-center">
