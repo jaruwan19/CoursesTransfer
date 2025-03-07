@@ -136,7 +136,15 @@
                             <label class="form-check-label" for="exempt4">ยกเว้นรายวิชาอื่น ๆ</label>
                         </div>
                     </div>
-
+                    @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     <div class="p-2 mt-3 mb-3 d-flex justify-content-between">
                         <a href="#" onclick="history.back();" class="btn outline-darkblue btn-lg">ย้อนกลับ</a>
                         <button type="submit" class="btn btn-darkblue btn-lg">ถัดไป</button>

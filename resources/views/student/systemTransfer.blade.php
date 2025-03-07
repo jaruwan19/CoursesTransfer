@@ -71,6 +71,9 @@
                         <label class="form-check-label">เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก
                             พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ</label>
                     </div>
+                    @error('system_name')
+                        <div class="alert alert-danger mt-2">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div id="institution-section" class="container-form mt-3">
@@ -78,7 +81,7 @@
                         <h5 class="form-header p-2">เลือกสถาบันการศึกษา</h5>
                     </div>
                     <div class="m-2">
-                        <select class="form-select" aria-label="Default select example" name="institution">
+                        <select class="form-select" aria-label="Default select example" name="institution" >
                             <option selected disabled hidden>เลือกสถาบันการศึกษา</option>
                             <option value="มหาวิทยาลัยราชภัฏศรีสะเกษ">มหาวิทยาลัยราชภัฏศรีสะเกษ</option>
                             <option value="มหาวิทยาลัยราชภัฏบุรีรัมย์">มหาวิทยาลัยราชภัฏบุรีรัมย์</option>
@@ -88,6 +91,9 @@
                             <option value="วิทยาลัยเทคนิคอุบลราชธานี">วิทยาลัยเทคนิคอุบลราชธานี</option>
                         </select>
                     </div>
+                    @error('institution')
+                        <div class="alert alert-danger mt-2">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div id="graduation-date-section" class="container-form mt-3">
@@ -97,6 +103,9 @@
                     <div class="m-2">
                         <input type="date" class="form-control" id="graduation_date" name="graduation_date">
                     </div>
+                    @error('graduation_date')
+                        <div class="alert alert-danger mt-2">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div id="additional-info-section" class="container-form mt-3" style="display: none;">
@@ -108,6 +117,9 @@
                         <input type="text" class="form-control" id="student_original_code" name="student_original_code"
                             placeholder="รหัสนักศึกษาเดิม">
                     </div>
+                    @error('student_original_code')
+                        <div class="alert alert-danger mt-2">{{ $message }}</div>
+                    @enderror
                     <div class="mb-2">
                         <label for="major_original" class="form-label fw-bold">สาขาวิชาเดิม</label>
                         <select class="form-select" id="major_original" name="major_original">
@@ -120,6 +132,9 @@
                             <option value="วิศวกรรมซอฟต์แวร์">วิศวกรรมซอฟต์แวร์</option>
                         </select>
                     </div>
+                    @error('major_original')
+                        <div class="alert alert-danger mt-2">{{ $message }}</div>
+                    @enderror
                 </div>
                 {{-- <div class="container-form mt-3">
                     <div class="form-group">

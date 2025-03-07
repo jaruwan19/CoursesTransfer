@@ -18,58 +18,89 @@ class RequestTransferController extends Controller
         return view('student.systemTransfer', compact('user'));
     }
     public function requestTransfer(Request $request)
-    {
-        $validatedData = $request->validate([
-            'system_name' => 'required',  // ตรวจสอบว่าไม่สามารถเป็นค่าว่างได้
-            'institution' => 'nullable|string',
-            'graduation_date' => 'nullable|date',
-            'student_original_code' => 'nullable|string',
-            'major_original' => 'nullable|string',
-            'transcript' => 'required|file|mimes:pdf,jpg,png|max:2048'  // transcript ต้องไม่เป็นค่าว่างและเป็นไฟล์ที่รองรับ
-        ]);
+{
+  
+    $rules = [
+        'system_name' => 'required|string',  
+        'institution' => 'nullable|string',
+        'graduation_date' => 'nullable|date',
+        'student_original_code' => 'nullable|string',
+        'major_original' => 'nullable|string',
+        'transcript' => 'required|file|mimes:pdf,jpg,png|max:2048',  
+    ];
 
-        // แปลงวันที่ให้เป็นรูปแบบที่ต้องการ (ภาษาไทย)
-        if ($request->has('graduation_date') && !empty($request->graduation_date)) {
-            try {
-                $graduationDate = Carbon::createFromFormat('Y-m-d', $request->graduation_date)
-                    ->locale('th')
-                    ->isoFormat('D MMMM YYYY');
-                $validatedData['graduation_date'] = $graduationDate;
-            } catch (\Exception $e) {
-                session()->flash('error', 'ไม่สามารถแปลงวันที่ได้');
-                return redirect()->back()->withInput();
-            }
-        }
+   
+    if ($request->system_name == "ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับ ปวส." ||
+        $request->system_name == "ยกเว้นรายวิชา สำหรับนักศึกษาที่สำเร็จการศึกษาระดับปริญญาตรี" ) {
+        $rules['institution'] = 'required|string';
+        $rules['graduation_date'] = 'required|date';
+    }
 
-        if ($request->hasFile('transcript')) {
-            // ตรวจสอบว่าไฟล์ที่อัปโหลดมีขนาดหรือประเภทไม่ตรงตามที่กำหนด
-            $file = $request->file('transcript');
-            if ($file->isValid()) {
-                $filePath = $file->store('transcripts', 'public');
-                $validatedData['transcript'] = $filePath;
-            } else {
-                session()->flash('error', 'ไฟล์ไม่ถูกต้องหรือเกิดข้อผิดพลาดในการอัปโหลด');
-                return redirect()->back()->withInput();
-            }
-        } else {
-            // หากไม่มีไฟล์อัปโหลด
-            session()->flash('error', 'กรุณาอัปโหลดไฟล์ Transcript');
+    if ($request->system_name == "ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น") {
+        $rules['institution'] = 'required|string';  
+    }
+
+    if ($request->system_name == "เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ") {
+        $rules['student_original_code'] = 'required|string'; 
+        $rules['major_original'] = 'required|string';  
+    }
+
+    $messages = [
+        'system_name.required' => 'กรุณาเลือกระบบเทียบโอน/ยกเว้นรายวิชา',
+        'graduation_date.required' => 'กรุณาเลือกวันที่สำเร็จการศึกษา',
+        'institution.required' => 'กรุณาเลือกสถาบันการศึกษา',
+        'student_original_code.required' => 'กรุณากรอกรหัสนักศึกษาเดิม',
+        'major_original.required' => 'กรุณาเลือกสาขาวิชาเดิม',
+        'transcript.required' => 'กรุณาอัปโหลดใบรายงานผลการเรียน (Transcript)',
+        'transcript.file' => 'ไฟล์ที่อัปโหลดต้องเป็นไฟล์',
+        'transcript.mimes' => 'กรุณาเลือกไฟล์ประเภท PDF, JPG หรือ PNG เท่านั้น',
+        'transcript.max' => 'ไฟล์ต้องมีขนาดไม่เกิน :max KB',
+    ];
+
+    $validatedData = $request->validate($rules, $messages);
+
+    session()->flash('system_name', $request->input('system_name'));
+    session()->flash('institution', $request->input('institution'));
+    session()->flash('graduation_date', $request->input('graduation_date'));
+    session()->flash('student_original_code', $request->input('student_original_code'));
+    session()->flash('major_original', $request->input('major_original'));
+
+    if ($request->has('graduation_date') && !empty($request->graduation_date)) {
+        try {
+            $graduationDate = Carbon::createFromFormat('Y-m-d', $request->graduation_date)
+                ->locale('th')
+                ->isoFormat('D MMMM YYYY');
+            $validatedData['graduation_date'] = $graduationDate;
+        } catch (\Exception $e) {
+            session()->flash('error', 'ไม่สามารถแปลงวันที่ได้');
             return redirect()->back()->withInput();
         }
-
-        session(['requestTransfer' => $validatedData]);
-
-        $systemName = $request->input('system_name');
-        if ($systemName == "ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น") {
-            return redirect()->route('addSubject');
-        }
-
-        if ($systemName == "เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ") {
-            return redirect()->route('addOriginalSubject');
-        }
-
-        return redirect()->route('typeTransfer');
     }
+
+    if ($request->hasFile('transcript')) {
+        $file = $request->file('transcript');
+        if ($file->isValid()) {
+            $filePath = $file->store('transcripts', 'public');
+            $validatedData['transcript'] = $filePath;
+        } else {
+            session()->flash('error', 'ไฟล์ไม่ถูกต้องหรือเกิดข้อผิดพลาดในการอัปโหลด');
+            return redirect()->back()->withInput();
+        }
+    }
+
+    session(['requestTransfer' => $validatedData]);
+
+    $systemName = $request->input('system_name');
+    if ($systemName == "ยกเว้นรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา จากมหาวิทยาลัยอื่น") {
+        return redirect()->route('addSubject');
+    }
+
+    if ($systemName == "เทียบโอนรายวิชา สำหรับนักศึกษาที่ยังไม่สำเร็จการศึกษา ลาออก พ้นสภาพนักศึกษาจากมหาวิทยาลัยราชภัฏศรีสะเกษ") {
+        return redirect()->route('addOriginalSubject');
+    }
+
+    return redirect()->route('typeTransfer');
+}
 
 
 
@@ -168,6 +199,13 @@ class RequestTransferController extends Controller
 
     public function storeTypeTransfer(Request $request)
     {
+        $validatedData = $request->validate([
+            'exemption' => 'required|array|min:1',
+            'exemption.*' => 'string',
+        ], [
+            'exemption.required' => 'กรุณาเลือกประเภทการเทียบโอน/ยกเว้นรายวิชา',
+            'exemption.min' => 'กรุณาเลือกอย่างน้อยหนึ่งตัวเลือก',
+        ]);
         $selectedExemptions = $request->input('exemption', []);
 
         $requestTransfer = session('requestTransfer', []);
