@@ -103,20 +103,17 @@ class ManageSubjectController extends Controller
         return view('officer.manage_subjects', compact('user', 'generalSubjects', 'specificSubjects', 'otherSubjects'));
     }
 
-    // ฟังก์ชันแสดงหน้าเพิ่มรายวิชา
     public function create()
     {
         $user = [
             'officer_name' => 'ดร.ปฏิมากร จริยฐิติพงศ์',
         ];
 
-        return view('officer.add_subject', compact('user'));  // เปลี่ยนให้เป็นชื่อหน้าฟอร์มของคุณ
+        return view('officer.add_subject', compact('user')); 
     }
 
-    // ฟังก์ชันจัดการการบันทึกข้อมูล
     public function store(Request $request)
     {
-        // ตรวจสอบความถูกต้องของข้อมูลที่ส่งมาจากฟอร์ม
         $validatedData = $request->validate([
             'exemption' => 'required|string',
             'course_name' => 'nullable|string',
@@ -128,4 +125,5 @@ class ManageSubjectController extends Controller
 
         return view('officer.manage_subjects');
     }
+
 }

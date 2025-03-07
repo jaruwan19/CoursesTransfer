@@ -1,58 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
     font-family: 'Prompt', sans-serif !important;
-  }
+}
+
 .input-group-append {
     cursor: pointer;
 }
-.header{
+
+.header {
     color: #0E4270;
     font-weight: bold;
 }
-.container-dotted{
+
+.container-dotted {
     border: 1px dotted;
     border-radius: 4px;
     color: #666666;
 }
-.form-header{
+
+.form-header {
     font-weight: bold;
     color: #0E4270;
-    background-color: #EBCA7D ;
+    background-color: #EBCA7D;
 }
-.form-header-show{
+
+.form-header-show {
     font-weight: bold;
     color: #0E4270;
 }
-.inputShow{
-    border:1px solid #666666;
+
+.inputShow {
+    border: 1px solid #666666;
     border-radius: 4px;
 }
-.btn.btn-darkblue{
+
+.btn.btn-darkblue {
     background-color: #0E4270;
     color: white;
 }
-.btn.btn-darkblue:hover{
+
+.btn.btn-darkblue:hover {
     background-color: #0E4270;
     color: white;
 }
-.btn.btn.outline-darkblue{
+
+.btn.btn.outline-darkblue {
     background-color: white;
     color: #0E4270;
-    border:2px solid #0E4270;
+    border: 2px solid #0E4270;
 }
-.btn.btn.outline-darkblue:hover{
+
+.btn.btn.outline-darkblue:hover {
     background-color: #0E4270;
     color: white;
 }
-.text-darkblue{
+
+.text-darkblue {
     color: #0E4270;
 }
+
 .bi-file-arrow-down-fill {
     font-size: x-large;
 }
 
-.bg-gold{
-    background-color: #EBCA7D ;
+.bg-gold {
+    background-color: #EBCA7D;
 }
 
 .nav-link.active,
@@ -60,11 +73,15 @@ body {
     background-color: #D7A126 !important;
     color: white !important;
 }
+
 .nav-tabs .nav-item .nav-link {
-    border-radius: 0; /* Remove rounded corners if applied */
+    border-radius: 0;
+    /* Remove rounded corners if applied */
 }
-.border-darkblue{
-    border: 1px solid #0E4270; ;
+
+.border-darkblue {
+    border: 1px solid #0E4270;
+    ;
 }
 
 /* step progress */
@@ -76,9 +93,10 @@ body {
     justify-content: center;
     align-items: center;
 }
-.step-wizard-list{
+
+.step-wizard-list {
     background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     color: #333;
     list-style-type: none;
     border-radius: 10px;
@@ -88,11 +106,11 @@ body {
     z-index: 10;
 }
 
-.step-wizard-item{
+.step-wizard-item {
     padding: 0 20px;
     flex-basis: 0;
     -webkit-box-flex: 1;
-    -ms-flex-positive:1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     max-width: 100%;
     display: flex;
@@ -101,7 +119,8 @@ body {
     min-width: 170px;
     position: relative;
 }
-.step-wizard-item + .step-wizard-item:after{
+
+.step-wizard-item+.step-wizard-item:after {
     content: "";
     position: absolute;
     left: 0;
@@ -112,9 +131,10 @@ body {
     transform: translateX(-50%);
     z-index: -10;
 }
-.progress-count{
+
+.progress-count {
     height: 40px;
-    width:40px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,10 +142,11 @@ body {
     font-weight: 600;
     margin: 0 auto;
     position: relative;
-    z-index:10;
+    z-index: 10;
     color: transparent;
 }
-.progress-count:after{
+
+.progress-count:after {
     content: "";
     height: 40px;
     width: 40px;
@@ -137,7 +158,8 @@ body {
     border-radius: 50%;
     z-index: -10;
 }
-.progress-count:before{
+
+.progress-count:before {
     content: "";
     height: 10px;
     width: 20px;
@@ -149,29 +171,36 @@ body {
     transform: translate(-50%, -60%) rotate(-45deg);
     transform-origin: center center;
 }
-.progress-label{
+
+.progress-label {
     font-size: 14px;
     font-weight: 600;
     margin-top: 10px;
 }
+
 .current-item .progress-count:before,
-.current-item ~ .step-wizard-item .progress-count:before{
+.current-item~.step-wizard-item .progress-count:before {
     display: none;
 }
-.current-item ~ .step-wizard-item .progress-count:after{
-    height:10px;
-    width:10px;
+
+.current-item~.step-wizard-item .progress-count:after {
+    height: 10px;
+    width: 10px;
 }
-.current-item ~ .step-wizard-item .progress-label{
+
+.current-item~.step-wizard-item .progress-label {
     opacity: 0.5;
 }
-.current-item .progress-count:after{
+
+.current-item .progress-count:after {
     background: #fff;
     border: 2px solid #D7A126;
 }
-.current-item .progress-count{
+
+.current-item .progress-count {
     color: #D7A126;
 }
+
 /* step progress */
 
 /* step progress statusRequest */
@@ -281,8 +310,10 @@ body {
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-decoration: none; /* ลบเส้นใต้จากลิงก์ */
-    color: inherit; /* สืบทอดสีจาก parent */
+    text-decoration: none;
+    /* ลบเส้นใต้จากลิงก์ */
+    color: inherit;
+    /* สืบทอดสีจาก parent */
 }
 
 .menuofficer-button img {
@@ -326,121 +357,79 @@ body {
     grid-column: 2;
     grid-row: 2;
 }
+
 /* หน้าเมนู menu officer */
 
+/* DataTable */
+#searchRequestsTable th {
+    padding: 10px 15px; 
+}
 
+.dataTables_length, .dataTables_filter {
+    margin-right: 20px; 
+    margin-left: 20px;
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+}
+
+.dataTables_filter input {
+    padding: 5px 10px; 
+    margin-left: 10px; 
+}
+
+.dataTables_length select {
+    padding: 5px 10px; 
+    margin-right: 10px; 
+}
+
+#searchRequestsTable tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+#searchRequestsTable tbody tr:nth-child(even) {
+    background-color: white; 
+}
+/* DataTable */
 
 /* หน้า search_requests*/
-.search-requests-container {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.search-requests-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.search-requests-header h2 {
-    margin: 0;
-}
-
-.search-requests-filter-bar {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.search-requests-filter-bar label {
-    margin-right: 10px;
-}
-
-.search-requests-filter-bar select {
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-}
-
-.search-requests-filter-bar input[type="text"] {
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    margin-left: 10px;
-}
-
-.search-requests-filter-bar button {
-    padding: 5px 10px;
-    background-color: #f0c14b;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-left: 5px;
-}
-
-.search-requests-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.search-requests-table th,
-.search-requests-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.search-requests-table th {
-    background-color: #EBCA7D;
-}
-
+/* สถานะ "คำร้องอนุมัติ" */
 .search-requests-status-approved {
-    background-color: #e0f7e9;
-    color: #388e3c;
-    padding: 5px 10px;
+    background-color: #e0f7e9; 
+    color: #388e3c; 
+    padding: 4px 10px; 
     border-radius: 3px;
-    display: inline-block;
+    display: inline-block; 
+    font-weight: normal; 
+    font-size: 12px; 
+    border: 1px solid #388e3c;
 }
 
+/* สถานะ "กำลังดำเนินการ" */
 .search-requests-status-pending {
-    background-color: #fff3e0;
-    color: #ff9800;
-    padding: 5px 10px;
+    background-color: #cce5ff; 
+    color: #1e88e5; 
+    padding: 4px 10px; 
     border-radius: 3px;
     display: inline-block;
+    font-weight: normal; 
+    font-size: 12px; 
+    border: 1px solid #1e88e5; 
 }
 
+/* สถานะ "ไม่อนุมัติ" */
 .search-requests-status-rejected {
-    background-color: #ffebee;
-    color: #d32f2f;
-    padding: 5px 10px;
+    background-color: #fff3e0; 
+    color: #ff9800; 
+    padding: 4px 10px; 
     border-radius: 3px;
     display: inline-block;
-}
-
-.search-requests-pagination {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.search-requests-pagination a {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 20%;
-    margin: 0 5px;
-    text-decoration: none;
-    color: #333;
-}
-
-.search-requests-pagination a.active {
-    background-color: #f0c14b;
-    color: white;
+    font-weight: normal; 
+    font-size: 12px; 
+    border: 1px solid #ff9800; 
 }
 /* หน้า search_requests*/
 
-/* หน้า search_requests modal*/
+/* หน้า status_requests modal*/
 .evidence-upload-container {
     border-radius: 10px;
     border: 2px dashed #ccc;
@@ -452,9 +441,10 @@ body {
     border-radius: 10px;
     border: 2px dashed #0E4270;
     font-size: 1.2rem;
-    color: #ccc; 
+    color: #ccc;
     padding: 60px;
     cursor: pointer;
-    
+
 }
-/* หน้า search_requests ของ modal*/
+
+/* หน้า status_requests ของ modal*/

@@ -19,6 +19,7 @@ use App\Http\Controllers\MenuOfficerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', [RequestTransferController::class, 'index'])->name('systemTransfer');
 
 Route::get('/StuLogin', function () {
@@ -54,16 +55,13 @@ Route::get('/data_preview', [RequestToClassPlanController::class, 'showDataPrevi
 
 Route::get('/adv_student_request', [RequestToAdvisorController::class, 'showStudentRequest'])->name('adv_student_request');
 
+Route::get('/search_requests', [OfficerWorkController::class, 'searchRequest'])->name('search_requests');
 Route::get('/receive_docs', [OfficerWorkController::class, 'recieveDocsRequest'])->name('receive_docs');
 Route::get('/receive_payment', [OfficerWorkController::class, 'recievePaymentRequest'])->name('receive_payment');
 Route::get('/payment_update', [OfficerWorkController::class, 'paymentUpdate'])->name('payment_update');
 
-Route::get('/manage_subjects', [ManageSubjectController::class, 'showSubjects'])->name('manage_subject');
-Route::get('add_subject', [ManageSubjectController::class, 'create'])->name('add_subject.create');
-Route::post('add_subject', [ManageSubjectController::class, 'store'])->name('add_subject.store');
-
 Route::get('/menu', [MenuOfficerController::class, 'selectMenu'])->name('menu.index');
 
-Route::get('/search_requests', function () {
-    return view('officer/search_requests');
-});
+Route::get('/manage_subjects', [ManageSubjectController::class, 'showSubjects'])->name('manage_subject');
+Route::get('/add_subject', [ManageSubjectController::class, 'create'])->name('add_subject.create');
+Route::post('/add_subject', [ManageSubjectController::class, 'store'])->name('add_subject.store');
