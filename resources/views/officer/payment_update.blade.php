@@ -59,8 +59,11 @@
                                                             class="btn btn-sm outline-darkblue rounded-pill w-50">ดูข้อมูล</a>
                                                     </td>
                                                     <td>
-                                                        <a href="#"
-                                                            class="btn btn-sm outline-darkblue rounded-pill w-50">ดูข้อมูล</a>
+                                                        <button type="button"
+                                                            class="btn btn-sm outline-darkblue rounded-pill w-50"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#uploadEvidenceModal">ดูหลักฐาน
+                                                        </button>
                                                     </td>
                                                     <td>
                                                         <a href="#"
@@ -71,6 +74,62 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="modal fade" id="uploadEvidenceModal" tabindex="-1"
+                                        aria-labelledby="uploadEvidenceModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="uploadEvidenceModalLabel">
+                                                        ข้อมูลหลักฐานการชำระเงิน</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="mb-3">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <label for="evidencePaymentDate" class="form-label fw-bold">วันที่ชำระเงิน :</label>
+                                                            </div>
+                                                            <div class="col-9">
+                                                                <span id="evidencePaymentDateDisplay">{{ $evidencePayment['payment_date'] }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <label for="evidencePaymentTime" class="form-label fw-bold">เวลา :</label>
+                                                            </div>
+                                                            <div class="col-9">
+                                                                <span id="evidencePaymentTimeDisplay">{{ $evidencePayment['payment_time'] }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <label for="evidenceImage" class="form-label fw-bold">หลักฐานการชำระเงิน :</label>
+                                                            </div>
+                                                            <div class="col-9">
+                                                                <div class="evidence-upload-container">
+                                                                    <div id="imagePreview" style="display: block;">
+                                                                        <img id="previewImage" src="{{ $evidencePayment['evidence_file_path'] }}"
+                                                                            alt="Image Preview"
+                                                                            style="max-width: 100%; max-height: 200px; display: block; margin: 0 auto;">
+                                                                    </div>
+                                                                    <span id="evidenceImageDisplay">{{ $evidencePayment['evidence_file_name'] }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-center">
+                                                        <button type="button" class="btn btn-darkblue me-2"
+                                                            data-bs-dismiss="modal">ปิด</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                                     <!-- Table for Tab 2 -->
                                     <table class="table mt-2 border border-1">

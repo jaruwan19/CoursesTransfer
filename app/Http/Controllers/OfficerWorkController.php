@@ -49,7 +49,15 @@ class OfficerWorkController extends Controller
                 'major_name' => 'วิศวกรรมซอฟต์แวร์'
             ]
         ];
-        return view('officer.payment_update', compact('user', 'student_requests'));
+        
+        $evidencePayment = [
+            'payment_date' => '10 กุมภาพันธ์ 2568',
+            'payment_time' => '13:31',
+            'evidence_file_path' => asset('img/bill.png'),
+            'evidence_file_name' => 'bill.png', 
+        ];
+
+        return view('officer.payment_update', compact('user', 'student_requests', 'evidencePayment'));
     }
 
     public function searchRequest(){
