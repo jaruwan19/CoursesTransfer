@@ -191,7 +191,7 @@
                         }
 
                         function goToEditPage() {
-                            window.location.href = 'edit-request.html';
+                            window.location.href = '#';
                         }
 
                         function copyLink() {
